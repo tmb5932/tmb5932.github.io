@@ -9,7 +9,7 @@
   }
 
   body {
-    background: rgb(58, 58, 58);
+    background: rgb(38, 42, 54);
     display: grid;
     gap: 20px;
   }
@@ -72,27 +72,13 @@
     justify-self: center;
   }
 
-  .grid-container {
+  .project-grid-container {
     display: grid;
     /* border: 1px solid red; */
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 20px;
     padding:  min(50px, 7%);
     justify-content: center;
-  }
-
-  .project-box {
-    min-height: 300px;
-    padding: 2em;
-    border: 1px solid grey;
-    border-radius: 10px;
-    background-color: darkgray;
-    text-align: center;
-  }
-
-  .project-title {
-    color: rgb(0, 65, 206);
-    text-shadow: #002b62b0 1px 1px;
   }
 
   .footer {
@@ -132,36 +118,57 @@
     text-decoration:none;
   }
 
-  .card {
-    width: 254px;
-    height: 190px;
-    background: #07182e;
-    position: relative;
+
+
+  .project-box {
     display: flex;
+    position: relative;
+    text-align: center;
     place-content: center;
     place-items: center;
     overflow: hidden;
     border-radius: 20px;
+    min-height: 300px;
+    padding: 2em;
+    background: #07182e;
   }
 
-  .card h2 {
-    z-index: 1;
-    color: white;
-    font-size: 2em;
-  }
-
-  .card::before {
+  .project-box::before {
     content: "";
     position: absolute;
-    width: 100px;
+    width: 150px;
     background-image: linear-gradient(
       180deg,
       rgb(0, 183, 255),
       rgb(255, 48, 255)
     );
-    height: 170%;
+    height: 230%;
     animation: rotBGimg 5s linear infinite;
     transition: all 0.2s linear;
+  }
+
+  .project-box::after {
+    content: "";
+    position: absolute;
+    background: #07182e;
+    inset: 5px;
+    border-radius: 15px;
+  }
+
+
+  .project-box h2 {
+    z-index: 2;
+    color: rgb(255, 238, 206);
+    font-size: 2em;
+  }
+
+  .project-title {
+    color: rgb(0, 65, 206);
+    text-shadow: #002b62b0 1px 1px;
+  }
+
+  .project-desc {
+    z-index: 25;
   }
 
   @keyframes rotBGimg {
@@ -172,14 +179,6 @@
     to {
       transform: rotate(360deg);
     }
-  }
-
-  .card::after {
-    content: "";
-    position: absolute;
-    background: #07182e;
-    inset: 5px;
-    border-radius: 15px;
   }
 
   .card:hover:before {

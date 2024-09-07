@@ -7,11 +7,12 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <nav class="navbar">
-    <a href="#">Home</a>
-    <a href="#">Projects</a>
-    <a href="#">Contact</a>
+    <a href="#home">Home</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact me">Contact</a>
   </nav>
   <body>
+    <a id="home" name="home"></a>
     <div class="intro-container">
       <div class="intro">
         <h1>Travis Brown</h1>
@@ -34,9 +35,10 @@
     </div>
 
     <!--Projects Section-->
+    <a id="projects" name="projects"></a>
     <h1 class="section-title">My Projects</h1>
 
-    <div class="grid-container">
+    <div class="project-grid-container">
       <!--Projects-->
       <div class="project-box">
         <h2 class="project-title">Project1</h2>
@@ -64,13 +66,16 @@
       </div>
       <div class="project-box">
         <h2 class="project-title">Project4</h2>
-        <p>
+        <p class="project-desc">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus,
           voluptatum id esse voluptatem, iste distinctio dignissimos nesciunt,
           consequuntur mollitia officiis et dolorum quia sequi illo.
         </p>
       </div>
     </div>
+
+    <a id="contact me" name="contact me"></a>
+    <div class="contact-grid"></div>
 
     <!--Social links at bottom left of screen-->
     <footer class="footer">
