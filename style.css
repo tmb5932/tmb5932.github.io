@@ -4,6 +4,19 @@
     box-sizing: border-box;
   }
 
+  .background {
+    width: 100%;
+    height: 100%;
+    background-color: #111111;
+    background-image: linear-gradient(
+      32deg,
+      rgba(8, 8, 8, 0.74) 30px,
+      transparent
+    );
+    background-size: 60px 60px;
+    background-position: -5px -5px;
+  }
+  
   html {
     display: grid;
   }
@@ -64,6 +77,7 @@
 
   .section-title {
     padding-top: 75px;
+    color: rgb(134, 24, 193);
     text-align: center;
   }
 
@@ -92,6 +106,79 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    z-index: 100;
+  }
+
+  .project-box {
+    display: flex;
+    position: relative;
+    text-align: center;
+    place-content: center;
+    /* perspective: 1000px; */
+    cursor: pointer;
+    place-items: center;
+    overflow: hidden;
+    border-radius: 20px;
+    min-height: 300px;
+    padding: 2em;
+    background: #07182e;
+  }
+
+  .front, .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+  }
+
+  .back {
+    transform: rotateX(180deg);
+  }
+  
+  #pb-1.flipped {
+    transform: rotateX(180deg);
+  }
+
+  .project-box::before {
+    content: "";
+    position: absolute;
+    width: 200px;
+    height: 230%;
+  }
+
+  .project-box::after {
+    content: "";
+    position: absolute;
+    background: #07182e;
+    inset: 5px;
+    border-radius: 15px;
+  }
+
+  .project-box h2 {
+    z-index: 2;
+    color: rgb(255, 238, 206);
+    font-size: 2em;
+  }
+
+  .project-title {
+    color: rgb(0, 65, 206);
+    text-shadow: #002b62b0 1px 1px;
+  }
+
+  .project-desc {
+    color: wheat;
+    z-index: 5;
+  }
+
+  .project-box:hover:before {
+    background-image: linear-gradient(180deg, purple, pink);
+    animation: none;
+    height: 170%;   
+    width: 100%;
   }
 
   .footer a {
@@ -113,89 +200,13 @@
     transition: .5s;
   }
 
+  .github-icon {
+    margin: auto;
+  }
+
   .footer a:hover {
     box-shadow: 0 2px 5px rgba(0,0,0,0.3);
     text-decoration:none;
-  }
-
-
-
-  .project-box {
-    display: flex;
-    position: relative;
-    text-align: center;
-    place-content: center;
-    place-items: center;
-    overflow: hidden;
-    border-radius: 20px;
-    min-height: 300px;
-    padding: 2em;
-    background: #07182e;
-  }
-
-  .project-box::before {
-    content: "";
-    position: absolute;
-    width: 150px;
-    background-image: linear-gradient(
-      180deg,
-      rgb(0, 183, 255),
-      rgb(255, 48, 255)
-    );
-    height: 230%;
-    animation: rotBGimg 5s linear infinite;
-    transition: all 0.2s linear;
-  }
-
-  .project-box::after {
-    content: "";
-    position: absolute;
-    background: #07182e;
-    inset: 5px;
-    border-radius: 15px;
-  }
-
-
-  .project-box h2 {
-    z-index: 2;
-    color: rgb(255, 238, 206);
-    font-size: 2em;
-  }
-
-  .project-title {
-    color: rgb(0, 65, 206);
-    text-shadow: #002b62b0 1px 1px;
-  }
-
-  .project-desc {
-    z-index: 25;
-  }
-
-  @keyframes rotBGimg {
-    from {
-      transform: rotate(0deg);
-    }
-
-    to {
-      transform: rotate(360deg);
-    }
-  }
-
-  .card:hover:before {
-    background-image: linear-gradient(180deg, purple, pink);
-    animation: none;
-    height: 170%;   
-    width: 100%;
-  }
-
-  .github-icon {
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 50%;
-    justify-content: end;
-    margin-bottom: 50%;
-    text-align: center;
-    margin: auto;
   }
 
   .github-icon:hover {
@@ -211,4 +222,3 @@
     fill:rgb(51, 174, 145);
     /* height: 40px; */
   }
-  

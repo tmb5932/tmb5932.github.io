@@ -9,78 +9,87 @@
   <nav class="navbar">
     <a href="#home">Home</a>
     <a href="#projects">Projects</a>
-    <a href="#contact me">Contact</a>
+    <a href="#contact">Contact</a>
   </nav>
   <body>
-    <a id="home" name="home"></a>
-    <div class="intro-container">
-      <div class="intro">
-        <h1>Travis Brown</h1>
-        <!--About Me Paragraph-->
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, odit?
-          Neque magni cupiditate impedit modi nam illum optio consequatur
-          pariatur maiores qui, cum laboriosam vel perferendis doloremque
-          sapiente placeat, delectus similique unde. Tempore cum repellat
-          molestiae unde soluta optio. Dolore saepe repellendus perferendis
-          mollitia corporis quibusdam, ipsa molestias quaerat laudantium?
-        </p>
+    <div class="background">
+      <a id="home" name="home"></a>
+      <div class="intro-container">
+        <div class="intro">
+          <h1>Travis Brown</h1>
+          <!--About Me Paragraph-->
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, odit?
+            Neque magni cupiditate impedit modi nam illum optio consequatur
+            pariatur maiores qui, cum laboriosam vel perferendis doloremque
+            sapiente placeat, delectus similique unde. Tempore cum repellat
+            molestiae unde soluta optio. Dolore saepe repellendus perferendis
+            mollitia corporis quibusdam, ipsa molestias quaerat laudantium?
+          </p>
+        </div>
+        <!--Landing Page Image-->
+        <img
+          class="home-img"
+          src="/assets/temporary.jpg"
+          alt="Introduction Photo"
+        />
       </div>
-      <!--Landing Page Image-->
-      <img
-        class="home-img"
-        src="/assets/temporary.jpg"
-        alt="Introduction Photo"
-      />
+
+      <!--Projects Section-->
+      <a id="projects" name="projects"></a>
+      <h1 class="section-title">My Projects</h1>
+      <div class="project-grid-container">
+        <!--Projects-->
+
+        <div class="project-box" id="pb-1">
+          <div class="project-front">
+            <h2 class="project-title">Project1</h2>
+            <p class="project-desc">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus,
+              voluptatum id esse voluptatem, iste distinctio dignissimos
+              nesciunt, consequuntur mollitia officiis et dolorum quia sequi
+              illo.
+            </p>
+          </div>
+          <div class="project-back">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab
+            consequatur recusandae similique perspiciatis iste sunt, saepe vero
+            et nobis quas, ipsam, hic in laudantium sint.
+          </div>
+        </div>
+
+        <div class="project-box">
+          <h2 class="project-title">Project2</h2>
+          <p class="project-desc">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus,
+            voluptatum id esse voluptatem, iste distinctio dignissimos nesciunt,
+            consequuntur mollitia officiis et dolorum quia sequi illo.
+          </p>
+        </div>
+        <div class="project-box">
+          <h2 class="project-title">Project3</h2>
+          <p class="project-desc">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus,
+            voluptatum id esse voluptatem, iste distinctio dignissimos nesciunt,
+            consequuntur mollitia officiis et dolorum quia sequi illo.
+          </p>
+        </div>
+        <div class="project-box">
+          <h2 class="project-title">Project4</h2>
+          <p class="project-desc">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus,
+            voluptatum id esse voluptatem, iste distinctio dignissimos nesciunt,
+            consequuntur mollitia officiis et dolorum quia sequi illo.
+          </p>
+        </div>
+      </div>
+      <a id="contact" name="contact"></a>
+      <div class="contact-grid"></div>
     </div>
-
-    <!--Projects Section-->
-    <a id="projects" name="projects"></a>
-    <h1 class="section-title">My Projects</h1>
-
-    <div class="project-grid-container">
-      <!--Projects-->
-      <div class="project-box">
-        <h2 class="project-title">Project1</h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus,
-          voluptatum id esse voluptatem, iste distinctio dignissimos nesciunt,
-          consequuntur mollitia officiis et dolorum quia sequi illo.
-        </p>
-      </div>
-      <div class="project-box">
-        <h2 class="project-title">Project2</h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus,
-          voluptatum id esse voluptatem, iste distinctio dignissimos nesciunt,
-          consequuntur mollitia officiis et dolorum quia sequi illo.
-        </p>
-      </div>
-      <div class="project-box">
-        <h2 class="project-title">Project3</h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus,
-          voluptatum id esse voluptatem, iste distinctio dignissimos nesciunt,
-          consequuntur mollitia officiis et dolorum quia sequi illo.
-        </p>
-      </div>
-      <div class="project-box">
-        <h2 class="project-title">Project4</h2>
-        <p class="project-desc">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus,
-          voluptatum id esse voluptatem, iste distinctio dignissimos nesciunt,
-          consequuntur mollitia officiis et dolorum quia sequi illo.
-        </p>
-      </div>
-    </div>
-
-    <a id="contact me" name="contact me"></a>
-    <div class="contact-grid"></div>
-
     <!--Social links at bottom left of screen-->
     <footer class="footer">
       <!--Github link-->
-      <a href="https://github.com/tmb5932" aria-hidden="true">
+      <a href="https://github.com/tmb5932" aria-hidden="true" target="_blank">
         <svg
           enable-background="new 0 0 32 32"
           id="Layer_1"
@@ -103,6 +112,7 @@
         href="https://www.linkedin.com/in/tbrown5932/"
         class="linkedin"
         aria-hidden="true"
+        target="_blank"
       >
         <svg
           enable-background="new 0 0 56.693 56.693"
@@ -126,7 +136,12 @@
         </svg>
       </a>
       <!--Resume link-->
-      <a href="assets/TB_Resume.pdf" class="resume" aria-hidden="true">
+      <a
+        href="assets/TB_Resume.pdf"
+        class="resume"
+        aria-hidden="true"
+        target="_blank"
+      >
         <svg
           style="
             shape-rendering: geometricPrecision;
@@ -153,5 +168,7 @@
         </svg>
       </a>
     </footer>
+
+    <script src="script.js"></script>
   </body>
 </html>
