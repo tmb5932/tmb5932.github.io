@@ -80,7 +80,6 @@
 
   .project-grid-container {
     display: grid;
-    border: 1px solid red;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 20px;
     padding:  min(50px, 7%);
@@ -141,7 +140,6 @@
   .contact-area {
     display: grid;
     justify-items: center;
-    border: 1px solid red;
     align-content: start;
     padding: 25px;
     gap: 30px;
