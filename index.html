@@ -12,75 +12,116 @@
     <a href="#contact">Contact</a>
   </nav>
   <body>
-    <div class="background">
-      <a id="home" name="home"></a>
-      <div class="intro-container">
-        <div class="intro">
-          <h1>Travis Brown</h1>
-          <!--About Me Paragraph-->
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, odit?
-            Neque magni cupiditate impedit modi nam illum optio consequatur
-            pariatur maiores qui, cum laboriosam vel perferendis doloremque
-            sapiente placeat, delectus similique unde. Tempore cum repellat
-            molestiae unde soluta optio. Dolore saepe repellendus perferendis
-            mollitia corporis quibusdam, ipsa molestias quaerat laudantium?
-          </p>
-        </div>
-        <!--Landing Page Image-->
-        <img
-          class="home-img"
-          src="/assets/temporary.jpg"
-          alt="Introduction Photo"
-        />
+    <a id="home" name="home"></a>
+    <div class="intro-container">
+      <div class="intro">
+        <h1>Travis Brown</h1>
+        <!--About Me Paragraph-->
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, odit?
+          Neque magni cupiditate impedit modi nam illum optio consequatur
+          pariatur maiores qui, cum laboriosam vel perferendis doloremque
+          sapiente placeat, delectus similique unde. Tempore cum repellat
+          molestiae unde soluta optio. Dolore saepe repellendus perferendis
+          mollitia corporis quibusdam, ipsa molestias quaerat laudantium?
+        </p>
       </div>
-
-      <!--Projects Section-->
-      <a id="projects" name="projects"></a>
-      <h1 class="section-title">My Projects</h1>
-      <div class="project-grid-container">
-        <!--Projects-->
-
-        <div class="project-box">
-          <h2 class="project-title">Project1</h2>
-          <p class="project-desc">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus,
-            voluptatum id esse voluptatem, iste distinctio dignissimos nesciunt,
-            consequuntur mollitia officiis et dolorum quia sequi illo.
-          </p>
-        </div>
-
-        <div class="project-box">
-          <h2 class="project-title">Project2</h2>
-          <p class="project-desc">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus,
-            voluptatum id esse voluptatem, iste distinctio dignissimos nesciunt,
-            consequuntur mollitia officiis et dolorum quia sequi illo.
-          </p>
-        </div>
-        <div class="project-box">
-          <h2 class="project-title">Project3</h2>
-          <p class="project-desc">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus,
-            voluptatum id esse voluptatem, iste distinctio dignissimos nesciunt,
-            consequuntur mollitia officiis et dolorum quia sequi illo.
-          </p>
-        </div>
-        <div class="project-box">
-          <h2 class="project-title">Project4</h2>
-          <p class="project-desc">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus,
-            voluptatum id esse voluptatem, iste distinctio dignissimos nesciunt,
-            consequuntur mollitia officiis et dolorum quia sequi illo.
-          </p>
-        </div>
-      </div>
-      <a id="contact" name="contact"></a>
-      <div class="contact-grid"></div>
+      <!--Landing Page Image-->
+      <img
+        class="home-img"
+        src="/assets/temporary.jpg"
+        alt="Introduction Photo"
+      />
     </div>
 
-    <!--Contact Me Section-->
-    <h1 class="section-title">Contact Points</h1>
+    <!--Projects Section-->
+    <a id="projects" name="projects"></a>
+    <h1 class="section-title">My Projects</h1>
+    <div class="project-grid-container">
+      <!--Projects-->
+
+      <div class="project-box">
+        <h2 class="project-title">Project1</h2>
+        <p class="project-desc">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus,
+          voluptatum id esse voluptatem, iste distinctio dignissimos nesciunt,
+          consequuntur mollitia officiis et dolorum quia sequi illo.
+        </p>
+      </div>
+
+      <div class="project-box">
+        <h2 class="project-title">Project2</h2>
+        <p class="project-desc">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus,
+          voluptatum id esse voluptatem, iste distinctio dignissimos nesciunt,
+          consequuntur mollitia officiis et dolorum quia sequi illo.
+        </p>
+      </div>
+      <div class="project-box">
+        <h2 class="project-title">Project3</h2>
+        <p class="project-desc">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus,
+          voluptatum id esse voluptatem, iste distinctio dignissimos nesciunt,
+          consequuntur mollitia officiis et dolorum quia sequi illo.
+        </p>
+      </div>
+      <div class="project-box">
+        <h2 class="project-title">Project4</h2>
+        <p class="project-desc">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus,
+          voluptatum id esse voluptatem, iste distinctio dignissimos nesciunt,
+          consequuntur mollitia officiis et dolorum quia sequi illo.
+        </p>
+      </div>
+    </div>
+    <a id="contact" name="contact"></a>
+    <div class="contact-area">
+      <!--Contact Me Section-->
+      <h1 class="section-title">Get In Touch</h1>
+      <p class="contact-text">
+        Check out what I'm up to at Github or LinkedIn, look at my resume, or
+        send me an email through the contact form.
+      </p>
+
+      <div class="form-container">
+        <form
+          class="form"
+          action="https://api.web3forms.com/submit"
+          method="POST"
+        >
+          <div class="form-group">
+            <h2 id="contact-header">Contact Me</h2>
+            <br />
+            <label for="email">Your Email</label>
+            <input
+              type="hidden"
+              name="access_key"
+              value="PUBLIC-ACCESS-KEY-HERE"
+            />
+            <input
+              type="text"
+              id="email"
+              name="email"
+              placeholder="email@gmail.com"
+              required="true"
+              aria-required="true"
+            />
+          </div>
+          <div class="form-group">
+            <label for="textarea">Message</label>
+            <textarea
+              name="message"
+              id="textarea"
+              placeholder="Your Message"
+              rows="10"
+              cols="50"
+              required="true"
+            ></textarea>
+          </div>
+          <button class="form-submit-btn" type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
 
     <!--Social links at bottom left of screen-->
     <footer class="footer">
