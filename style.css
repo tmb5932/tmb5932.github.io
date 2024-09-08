@@ -69,7 +69,7 @@
 
   .section-title {
     padding-top: 75px;
-    color: rgb(134, 24, 193);
+    color: rgb(59, 173, 255);
     text-align: center;
   }
 
@@ -125,10 +125,9 @@
   }
 
   .project-title {
-    color: rgb(0, 65, 206);
+    color: rgb(59, 173, 255);
     text-shadow: #002b62b0 1px 1px;
     z-index: 2;
-    color: rgb(255, 238, 206);
     font-size: 2em;
   }
 
@@ -141,17 +140,62 @@
     display: grid;
     justify-items: center;
     align-content: start;
-    padding: 25px;
+    padding: 0px, 25px, 25px 25px;
     gap: 30px;
     height: 950px;
   }
 
   .contact-text {
     color:antiquewhite;
+    font-size: larger;
     text-align: center;
-    padding: 25px;
+    padding-bottom: 25px;
 
   }
+
+.contact-button-box {
+  text-align: center;
+  font-size: 25px;
+  color: #73d9a9;  
+}
+
+.contact-button {
+  appearance: none;
+  background-color: transparent;
+  border: 0.125em solid #62e2ff;
+  border-radius: 0.9375em;
+  box-sizing: border-box;
+  color: #73d9a9;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: normal;
+  min-height: 3.75em;
+  outline: none;
+  padding: 1em 2.3em;
+  text-align: center;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  will-change: transform;
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-bottom: 30px;
+ }
+
+.contact-button:hover {
+  color: #fff;
+  background-color: #1A1A1A;
+  box-shadow: #9f21c567 0 8px 15px;
+  transform: translateY(-2px);
+ }
+ 
+ .contact-button:active {
+  box-shadow: none;
+  transform: translateY(0);
+ }
 
   .form-container {
     width: 400px;
@@ -212,7 +256,6 @@
     height: 96px;
     border: 1px solid #414141;
     background-color: transparent;
-    font-family: inherit;
   }
   
   #contact-header {
@@ -260,10 +303,10 @@
   
   .footer {
     position: fixed;
-    bottom: 5px;
-    left: 0px;
+    bottom: 8px;
+    left: 5px;
     border-radius: 0.5rem;
-    width: max(30%, 200px);
+    width: max(200px, 25%);
     padding: 10px;
     background-color: transparent;
     display: flex;
@@ -286,13 +329,13 @@
     padding: 6px;
     box-sizing: border-box;
     text-decoration:none;
-    box-shadow: 0 10px 15px rgba(147, 141, 145, 0.371);
+    box-shadow: 0 10px 15px rgba(147, 141, 145, 0.276);
     background: linear-gradient(0deg, #ddd, #fff);
     transition: .5s;
   }
 
   .github-icon {
-    margin: auto;
+    margin: 0px;
   }
 
   .footer a:hover {
