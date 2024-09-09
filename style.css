@@ -54,6 +54,10 @@
     text-shadow: rgb(7, 24, 46) 3px 3px;
   }
 
+  @media only screen and (max-width: 430px) {
+    
+  }
+
   .intro-container {
     position: relative;
     display: grid;
@@ -179,8 +183,8 @@
     padding: 0px, 25px, 25px 25px;
     gap: 30px;
     /* height: 950px; */
-    margin-bottom: 600px;
-    border: 1px solid red;
+    margin-bottom: 225px;
+    /* border: 1px solid red; */
   }
 
   .contact-text {
