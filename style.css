@@ -37,6 +37,12 @@
     z-index: 100;
   }
 
+  @media only screen and (max-width: 370px) {
+    .navbar {
+      right: 10px;
+    }
+  }
+
   .navbar button {
     font-size: 25px;
     color: rgb(253, 237, 208);
@@ -89,13 +95,23 @@
     color: wheat;
   }
 
+  .intro .school {
+    font-size: 115%;
+  }
+
+  .intro .program {
+    font-size: 105%;
+  }
+
   @media only screen and (max-width: 429px) {
     .intro-container {
       grid-template-columns: 1fr;
+      padding-top: 50px;
     }
 
     .intro .name {
       line-height: 85%;
+      padding: 0.3em 0 0.05em 0;
     }
   }
 
