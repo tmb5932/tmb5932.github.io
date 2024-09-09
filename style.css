@@ -103,7 +103,7 @@
 
   .project-grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
     gap: 20px;
     padding:  min(50px, 7%);
     justify-content: center;
@@ -111,8 +111,8 @@
 
   .project-box {
     display: grid;
-    grid-template-rows: 2;
-    grid-gap: 20px;
+    grid-template-rows: auto auto 1fr;
+    grid-gap: 0px;
     position: relative;
     text-align: center;
     place-content: center;
@@ -123,6 +123,7 @@
     min-height: 300px;
     padding: 2em;
     background: rgb(7, 24, 46);
+    text-decoration: none;
   }
 
   .project-box::before {
@@ -152,6 +153,16 @@
     text-shadow: rgba(0, 43, 98, 0.69) 1px 1px;
     z-index: 2;
     font-size: 2em;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  .project-type {
+    color: rgb(59, 173, 255);
+    text-shadow: rgba(0, 43, 98, 0.69) 1px 1px;
+    z-index: 2;
+    font-size: 1.3em;
+    margin-bottom: 15px;
   }
 
   .project-desc {
