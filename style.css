@@ -54,10 +54,6 @@
     text-shadow: rgb(7, 24, 46) 3px 3px;
   }
 
-  @media only screen and (max-width: 430px) {
-    
-  }
-
   .intro-container {
     position: relative;
     display: grid;
@@ -67,6 +63,12 @@
     padding-bottom: 50px;
     align-items: center;
     justify-content: center;
+  }
+
+  @media only screen and (max-width: 429px) {
+    .intro-container {
+      grid-template-columns: none;
+    }
   }
 
   .intro {
@@ -107,7 +109,7 @@
 
   .project-grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(550px, 1fr));
     gap: 20px;
     padding:  min(50px, 7%);
     justify-content: center;
@@ -191,8 +193,7 @@
     color:antiquewhite;
     font-size: larger;
     text-align: center;
-    padding-bottom: 25px;
-
+    padding: 0px 15px 25px;
   }
 
 #contact-button-container {
