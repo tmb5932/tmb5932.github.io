@@ -35,7 +35,6 @@
     justify-content: space-around;
     align-items: center;
     z-index: 100;
-    cursor: pointer;
   }
 
   .navbar button {
@@ -47,6 +46,7 @@
     text-decoration: none;
     font-weight: 500;
     transition: .3s;
+    cursor: pointer;
   }
 
   .navbar button:hover {
@@ -57,7 +57,7 @@
   .intro-container {
     position: relative;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(430px, 1fr));
     gap: 25px;
     padding-top: 100px;
     padding-bottom: 50px;
