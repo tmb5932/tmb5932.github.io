@@ -178,7 +178,9 @@
     align-content: start;
     padding: 0px, 25px, 25px 25px;
     gap: 30px;
-    height: 950px;
+    /* height: 950px; */
+    margin-bottom: 600px;
+    border: 1px solid red;
   }
 
   .contact-text {
