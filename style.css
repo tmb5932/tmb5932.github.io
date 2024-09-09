@@ -18,6 +18,8 @@
     );
     background-size: 60px 60px;
     background-position: -5px -5px;
+    font-family: 'EB Garamond';
+    font-size: 18px;
   }
 
   .navbar {
@@ -67,23 +69,31 @@
     justify-self: center;
     text-align: center;
     padding:  min(50px, 7%);
-    color: rgb(255, 225, 187);
+    color: wheat;
     font-size: 100%;
     line-height: 150%;
   }
 
-  .intro name {
-    font-size: large;
+  .intro .name {
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    font-size: 4em;
+    background-image: linear-gradient(120deg, rgb(158, 33, 197), rgb(98, 226, 255));
+    background-size: 125% 100%;
+    padding: 0.2em 0;
   }
 
-  .intro intro-para {
-    font-size: larger;
+  .intro .intro-para {
+    font-size: 120%;
+    color: wheat;
   }
 
   .section-title {
     padding-top: 75px;
     color: rgb(59, 173, 255);
     text-align: center;
+    font-size: 250%;
   }
 
   .home-img {
@@ -146,6 +156,8 @@
 
   .project-desc {
     color: wheat;
+    font-size: larger;
+    font-family: inherit;
     z-index: 5;
   }
 
@@ -213,15 +225,14 @@
  .contact-button:active {
   transform: translateY(2px);
   box-shadow: none;
-
  }
 
   .form-container {
     width: 400px;
     background: linear-gradient(rgb(33, 33, 33), rgb(33, 33, 33)) padding-box, linear-gradient(320deg, rgb(158, 33, 197), rgb(98, 226, 255)) border-box;
     border: 2px solid transparent;
-    padding: 32px 24px;
-    font-size: 14px;
+    padding: 26px 24px 32px 24px;
+    font-size: 20px;
     font-family: inherit;
     color: white;
     display: flex;
@@ -253,7 +264,7 @@
     margin-bottom: 5px;
     color: rgb(140, 140, 140);
     font-weight: 600;
-    font-size: 16px;
+    font-size: 18px;
   }
   
   .form-container .form-group input {
@@ -281,6 +292,7 @@
   
   #contact-header {
     text-align: center;
+    margin-bottom: 10px;
   }
   
   .form-container .form-group input::placeholder {
