@@ -1,6 +1,6 @@
 # My Personal Website
 ## Intro
-This is my personal website, which also happens to be my first website I've made and first time using html and css. My projects, contact information, and resume can all be found on it.
+This is my personal website, which also happens to be my first website I've made and first time using html and css. My projects, socials, and resume can all be found on it.
 
 _Still in progress_
 
