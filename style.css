@@ -198,6 +198,17 @@
     z-index: 5;
   }
 
+
+.click-me {
+  color:  white;
+  margin-top: .3em;
+  font-size: 30px;
+  background-color:  rgb(65, 65, 65);
+  border-radius: 20px;
+  padding: 10px;
+  z-index: 5;
+}
+
   @media only screen and (max-width: 549px) {
     .project-grid-container {
       grid-template-columns: repeat(auto-fit, minmax(250px, 95%));
@@ -216,9 +227,7 @@
     align-content: start;
     padding: 0px, 25px, 25px 25px;
     gap: 30px;
-    /* height: 950px; */
     margin-bottom: 225px;
-    /* border: 1px solid red; */
   }
 
   .contact-text {
