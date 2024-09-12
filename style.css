@@ -198,7 +198,7 @@
     z-index: 5;
   }
 
-.click-me {
+.repo-button {
   color:  white;
   margin-top: .3em;
   font-size: 30px;
@@ -206,6 +206,10 @@
   border-radius: 20px;
   padding: 10px;
   z-index: 5;
+}
+
+.repo-button:hover {
+  background-image: linear-gradient(180deg, rgb(183, 0, 183), purple);
 }
 
   @media only screen and (max-width: 549px) {
