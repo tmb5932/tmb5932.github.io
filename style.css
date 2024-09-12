@@ -198,7 +198,6 @@
     z-index: 5;
   }
 
-
 .click-me {
   color:  white;
   margin-top: .3em;
@@ -387,12 +386,12 @@
     cursor: pointer;
     border-radius: 10px;
   }
-  
+
   .form-container .form-submit-btn:hover {
     background-color: white;
     border-color: rgb(255, 23, 247);
   }
-  
+
   .footer {
     position: fixed;
     bottom: 8px;
