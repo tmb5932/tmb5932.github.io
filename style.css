@@ -380,9 +380,9 @@ background-image: linear-gradient(180deg, rgb(183, 0, 183), purple);
   
   .form-container .form-submit-btn {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
-    align-self: flex-start;
+    align-self: center;
     font-family: inherit;
     color: white;
     font-weight: 600;
@@ -435,23 +435,7 @@ background-image: linear-gradient(180deg, rgb(183, 0, 183), purple);
     transition: .5s;
   }
 
-  .github-icon {
-    margin: 0px;
-  }
-
   .footer a:hover {
     box-shadow: 0 2px 5px rgba(245, 245, 245, 0.567);
     text-decoration:none;
-  }
-
-  .github-icon:hover {
-    fill:rgb(98,34,133);
-  }
-
-  .linkedin-icon:hover {
-    fill:rgb(1,115,178);
-  }
-
-  .resume-icon:hover {
-    fill:rgb(51, 174, 145);
   }
