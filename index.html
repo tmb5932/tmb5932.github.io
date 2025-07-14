@@ -94,12 +94,48 @@
     <h1 class="section-title" id="projects">My Projects</h1>
     <div class="project-grid-container">
       <!--Projects-->
-      <a
-        class="project-box"
-        href="https://github.com/tmb5932/KwziiCasino"
-        aria-hidden="true"
-        target="_blank"
-      >
+      <div class="project-box">
+        <h2 class="project-title">Selection Menu Chip8 ROM</h2>
+        <h3 class="project-type">Personal Project</h3>
+        <p class="project-desc">
+          After creating my Chip8 emulator, I wanted to make my own ROM, not only partially because I wanted to write a program in assembly.
+          This ROM is a menu that gives a dynamic number of options fed into the memory of the Chip8 before the ROM was started. It allows the user
+          to select an option, and that option is available to the Emulator program to do something with. In my case, I use it to select what game I wanted to play.
+          <br>I used <a class="internal-link" target="_blank" href="https://johnearnest.github.io/Octo/">John Earnest's Octo</a> to make this.
+        </p>
+        <div class="prj-button-container">
+          <a href="octo-menu-viewer.html" class="project-button">Web Example</a>
+          <a href="https://github.com/tmb5932/octo-menu" target="_blank" class="project-button">GitHub Repo</a>
+        </div>
+      </div>
+
+      <div class="project-box">
+        <h2 class="project-title">Handheld Chip8 </h2>
+        <h3 class="project-type">Personal Project</h3>
+        <p class="project-desc">
+          Using the Chip8 emulator I created, I made a retro-inspired handheld console. Built on a Raspberry Pi 5, SSD1309 OLED display, a custom-designed 4x4 keypad, and an active buzzer for sound. 
+          Designed and engineered from scratch, this Game Boy-style device brings classic Chip-8 games to life in a portable form.
+        </p>
+        <div class="prj-button-container">
+          <a href="chip8-handheld.html" class="project-button">Photos</a>
+          <a href="https://github.com/tmb5932/chip8-embedded" target="_blank" class="project-button">GitHub Repo</a>
+        </div>
+      </div>
+
+      <div class="project-box">
+        <h2 class="project-title">Chip8 Emulator</h2>
+        <h3 class="project-type">Personal Project</h3>
+        <p class="project-desc">
+          Created in Rust, this program emulates a Chip8, which is a virtual machine from the '70s. That technically makes this an interpreter, but whatever.
+          This was my first time using Rust, or making an emulator, so the process was probably slower than it otherwise would have been, but I learned a lot about Rust and the internals of computers.
+          The emulator uses SDL2 to display graphics, audio, and keyboard input.
+        </p>
+        <div class="prj-button-container">
+          <a href="https://github.com/tmb5932/chip8-emulator" target="_blank" class="project-button">GitHub Repo</a>
+        </div>
+      </div>
+
+      <div class="project-box">
         <h2 class="project-title">KwziiCasino</h2>
         <h3 class="project-type">Personal Project</h3>
         <p class="project-desc">
@@ -112,17 +148,11 @@
           that wasn't a simple homework assignment, and I learned a lot from it.
         </p>
         <div class="prj-button-container">
-          <span class="project-button">GitHub Repo</span>
-          <!-- <span class="project-button">Watch Demo</span> -->
+          <a class="project-button" target="_blank" href="https://github.com/tmb5932/KwziiCasino">GitHub Repo</a>
         </div>
-      </a>
+      </div>
 
-      <a
-        class="project-box"
-        href="https://github.com/tmb5932/custom-course-flowchart"
-        aria-hidden="true"
-        target="_blank"
-      >
+      <div class="project-box">
         <h2 class="project-title">Custom Course Flowchart Maker</h2>
         <h3 class="project-type">Personal Project</h3>
         <p class="project-desc">
@@ -135,16 +165,11 @@
           academic path in a more efficient and interactive way.
         </p>
         <div class="prj-button-container">
-          <span class="project-button">GitHub Repo</span>
+          <a href="https://github.com/tmb5932/custom-course-flowchart" target="_blank" class="project-button">GitHub Repo</a>
         </div>
-      </a>
+      </div>
 
-      <a
-        class="project-box"
-        href="https://github.com/tmb5932/personal-expense-tracker"
-        aria-hidden="true"
-        target="_blank"
-      >
+      <div class="project-box">
         <h2 class="project-title">Personal Expense Tracker</h2>
         <h3 class="project-type">Personal Project</h3>
         <p class="project-desc">
@@ -155,16 +180,11 @@
           allowing me to see where my money is going month by month.
         </p>
         <div class="prj-button-container">
-          <span class="project-button">GitHub Repo</span>
+          <a href="https://github.com/tmb5932/personal-expense-tracker" target="_blank" class="project-button">GitHub Repo</a>
         </div>
-      </a>
+      </div>
 
-      <a
-        class="project-box"
-        href="https://github.com/tmb5932/auto-enroll-rit"
-        aria-hidden="true"
-        target="_blank"
-      >
+      <div class="project-box" >
         <h2 class="project-title">Class Enrollment Script</h2>
         <h3 class="project-type">Personal Project</h3>
         <p class="project-desc">
@@ -176,16 +196,11 @@
           enrollment process in RIT's online academic portal (SIS).
         </p>
         <div class="prj-button-container">
-          <span class="project-button">GitHub Repo</span>
+          <a href="https://github.com/tmb5932/auto-enroll-rit" target="_blank" class="project-button">GitHub Repo</a>
         </div>
-      </a>
+      </div>
 
-      <a
-        class="project-box"
-        href="https://github.com/tmb5932/currencymod"
-        aria-hidden="true"
-        target="_blank"
-      >
+      <div class="project-box">
         <h2 class="project-title">Minecraft Mod</h2>
         <h3 class="project-type">Personal Project</h3>
         <p class="project-desc">
@@ -197,56 +212,41 @@
           exploration and experimentation with Minecraft modding.
         </p>
         <div class="prj-button-container">
-          <span class="project-button">GitHub Repo</span>
+          <a href="https://github.com/tmb5932/currencymod" target="_blank" class="project-button">GitHub Repo</a>
         </div>
-      </a>
-
-      <a
-      class="project-box"
-      href="https://github.com/tmb5932/studiotvwt"
-      aria-hidden="true"
-      target="_blank"
-    >
-      <h2 class="project-title">Studio TVWT</h2>
-      <h3 class="project-type">CSCI 320 Principles of Data Management Semester Team Project</h3>
-      <p class="project-desc">
-        Studio TVWT is a command-line interface (CLI) designed to interact with 
-        a PostgreSQL-based movies database. The project allows users to manage 
-        movies, rate them, create collections, follow users, track watch history, 
-        and receive personalized recommendations based on play history and community trends.
-        This was created as a semester-long project for my Principles of Data Management course,
-        with a similar idea to Goodreads, but for movies. Completed with a team of 3 peers.
-      </p>
-      <div class="prj-button-container">
-        <span class="project-button">GitHub Repo</span>
       </div>
-    </a>
 
+      <div class="project-box">
+        <h2 class="project-title">Studio TVWT</h2>
+        <h3 class="project-type">CSCI 320 Principles of Data Management Semester Team Project</h3>
+        <p class="project-desc">
+          Studio TVWT is a command-line interface (CLI) designed to interact with 
+          a PostgreSQL-based movies database. The project allows users to manage 
+          movies, rate them, create collections, follow users, track watch history, 
+          and receive personalized recommendations based on play history and community trends.
+          This was created as a semester-long project for my Principles of Data Management course,
+          with a similar idea to Goodreads, but for movies. Completed with a team of 3 peers.
+        </p>
+        <div class="prj-button-container">
+          <a href="https://github.com/tmb5932/studiotvwt" target="_blank" class="project-button">GitHub Repo</a>
+        </div>
+      </div>
 
-    <a
-    class="project-box"
-    href="https://github.com/tmb5932/team-project-2241-swen-261-02-3c-aplus"
-    aria-hidden="true"
-    target="_blank"
-  >
-    <h2 class="project-title">U-Fund: Homeless Shelter</h2>
-    <h3 class="project-type">SWEN 261 Software Engineering Semester Team Project</h3>
-    <p class="project-desc">
-      U-Fund is a web-based donation platform designed to support a non-profit homeless 
-      shelter by streamlining the donation process. Developed as a team project, this 
-      application allows users to buy items based on the shelter's needs through a 
-      digital "cupboard." Built with an Angular front-end and a Java Spring backend, 
-      this project was a valuable full-stack experience. Completed with a team of 3 peers
-      following Scrum methodology.
-    </p>
-    <div class="prj-button-container">
-      <span class="project-button">GitHub Repo</span>
-    </div>
-  </a>
+      <div class="project-box">
+        <h2 class="project-title">U-Fund: Homeless Shelter</h2>
+        <h3 class="project-type">SWEN 261 Software Engineering Semester Team Project</h3>
+        <p class="project-desc">
+          U-Fund is a web-based donation platform designed to support a non-profit homeless 
+          shelter by streamlining the donation process. Developed as a team project, this 
+          application allows users to buy items based on the shelter's needs through a 
+          digital "cupboard." Built with an Angular front-end and a Java Spring backend, 
+          this project was a valuable full-stack experience. Completed with a team of 3 peers
+          following Scrum methodology.
+        </p>
+      </div>
+    </div
 
-    </div>
-
-    <!--Contact Me Section-->
+    <!-- Contact Me Section -->
     <div class="contact-area">
       <h1 class="section-title" id="contact">Get In Touch</h1>
       <p class="contact-text">

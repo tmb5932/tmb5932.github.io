@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>Octo Menu ROM</title>
+	<link
+	rel="icon"
+	type="image/png"
+	sizes="256x256"
+	href="/assets/favicons/favicon-256.png"
+	/>
+  	<link rel="stylesheet" href="style.css" />
+  	<link rel="stylesheet" href="octo-style.css" />
+</head>
+<body>
+	<!--Navigation Bar-->
+	<nav class="navbar">
+		<button id="home-nav" onclick="location.href='/'">Home</button>
+		<button id="project-nav" onclick="location.href='/#projects'">Projects</button>
+		<button id="contact-nav" onclick="location.href='/#contact'">Contact</button>
+	</nav>
+
+	<div class="container">
+		<h1>Test out my Chip8 Menu ROM!</h1>
+	  	<p>This emulator allows you to test my Menu ROM I created in Octo Assembly.<br>Use W to move up in the list, S to move down, and D to select the current item!</p>
+  
+	  	<div class="emulator-wrapper">
+			<iframe id="game-frame" src="octo-menu-example.html" width="100%" height="400px"></iframe>
+	  	</div>
+		<button class="btn-reload" onclick="reloadIframe()">Restart Emulator</button>
+	</div>
+	<script>
+		window.addEventListener('load', function () {
+			const iframe = document.getElementById('game-frame');
+			iframe.focus();
+		});
+
+		function reloadIframe() {
+			const iframe = document.getElementById('game-frame');
+			iframe.src = iframe.src;
+			iframe.focus();
+		}
+	</script>
+</body>

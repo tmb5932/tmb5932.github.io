@@ -142,7 +142,7 @@ body {
   position: relative;
   text-align: center;
   place-content: center;
-  cursor: pointer;
+  cursor: default;
   place-items: center;
   overflow: hidden;
   border-radius: 20px;
@@ -205,6 +205,10 @@ body {
   z-index: 5;
 }
 
+.internal-link {
+  color: rgb(119, 219, 255);
+}
+
 .project-button {
 color:  white;
 font-size: 30px;
@@ -212,6 +216,7 @@ background-color:  rgb(65, 65, 65);
 border-radius: 20px;
 padding: 10px;
 z-index: 5;
+text-decoration: none;
 }
 
 .project-button:hover {

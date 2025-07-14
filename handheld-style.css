@@ -1,0 +1,41 @@
+.gallery-image {
+    max-width: min(500px, 90%);
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
+    margin-bottom: 1rem;
+}
+
+.image-caption {
+    color: wheat;
+    font-size: 1.1rem;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.gallery-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    gap: 1.5rem;
+}
+
+.back-home-button {
+    color: rgb(59, 173, 255);
+    background-color: transparent;
+    border: 2px solid rgb(59, 173, 255);
+    padding: 10px 24px;
+    font-size: 1rem;
+    font-family: inherit;
+    font-weight: 500;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 3rem;
+}
+
+.back-home-button:hover {
+    background-color: rgb(59, 173, 255);
+    color: black;
+}
