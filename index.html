@@ -113,11 +113,12 @@
         <h2 class="project-title">Handheld Chip8 </h2>
         <h3 class="project-type">Personal Project</h3>
         <p class="project-desc">
-          Using the Chip8 emulator I created, I made a retro-inspired handheld console. Built on a Raspberry Pi 5, SSD1309 OLED display, a custom-designed 4x4 keypad, and an active buzzer for sound. 
-          Using KiCad for making the custom keypad PCB, and soldering it all together, this Game Boy style device allows you to play Chip-8 games anywhere.
+          Using the Chip8 emulator I created, I made a retro-inspired handheld console. Built on a Raspberry Pi 3, 
+          SSD1309 OLED display, a custom-designed 4x4 keypad, and an active buzzer for sound. Using KiCad for making 
+          the custom keypad PCB, and soldering it all together, this Game Boy style device allows you to play Chip-8 games anywhere.
         </p>
         <div class="prj-button-container">
-          <!-- <a href="chip8-handheld.html" class="project-button">Photos</a> -->
+          <a href="chip8-handheld.html" class="project-button">Photos</a>
           <a href="https://github.com/tmb5932/chip8-embedded" target="_blank" class="project-button">GitHub Repo</a>
         </div>
       </div>
@@ -126,9 +127,11 @@
         <h2 class="project-title">Chip8 Emulator</h2>
         <h3 class="project-type">Personal Project</h3>
         <p class="project-desc">
-          Created in Rust, this program emulates a Chip8, which is a virtual machine from the '70s. That technically makes this an interpreter, but whatever.
-          This was my first time using Rust, or making an emulator, so the process was probably slower than it otherwise would have been, but I learned a lot about Rust and the internals of computers.
-          The emulator uses SDL2 to display graphics, audio, and keyboard input.
+          Created in Rust, this program emulates a Chip8, which is a virtual machine from the '70s. That technically 
+          makes this an interpreter, but I've found emulator to be a more commonly understood term. This was my first time 
+          using Rust, or making an emulator, so the process was probably slower than it otherwise would have been, 
+          but I learned a lot about Rust and the internals of computers. The emulator uses SDL2 to display graphics, 
+          audio, and retrieve keyboard input.
         </p>
         <div class="prj-button-container">
           <a href="https://github.com/tmb5932/chip8-emulator" target="_blank" class="project-button">GitHub Repo</a>
@@ -136,19 +139,19 @@
       </div>
 
       <div class="project-box">
-        <h2 class="project-title">KwziiCasino</h2>
-        <h3 class="project-type">Personal Project</h3>
+        <h2 class="project-title">Gateway Utility Board: GPS Telemetry</h2>
+        <h3 class="project-type">RIT Electric Vehicle Team</h3>
         <p class="project-desc">
-          KwziiCasino is an entertaining and interactive project I created to
-          simulate various casino games. Developed using Java and JavaFX, it
-          aims to provide an engaging experience with a diverse range of games
-          and activities. The project features classic casino games such as
-          blackjack, horse betting, and slots, as well as fun extras like coin
-          flips and a solvable Rubik’s Cube. This was my first attempt at a project 
-          that wasn't a simple homework assignment, and I learned a lot from it.
+          As a member of <a target="_blank" href="https://rit-evt.com/" class="internal-link">RIT's Electric Vehicle Team</a>, I 
+          enhanced the Gateway Utility Board (GUB), which logs onboard bus data from our electric motorcycles for debugging and 
+          analysis. I integrated a GPS module to capture real-time position and speed, expanding the board's role in telemetry 
+          and performance tracking. This data also lays the groundwork for a proof of concept with LoRa wireless communication, 
+          enabling future real-time transmission from the bike to a remote computer. 
+          <br>
+          Learn more about our firmware work at <a href="https://github.com/RIT-EVT" target="_blank" class="internal-link">EVT's Official GitHub</a>.
         </p>
         <div class="prj-button-container">
-          <a class="project-button" target="_blank" href="https://github.com/tmb5932/KwziiCasino">GitHub Repo</a>
+          <a href="https://github.com/RIT-EVT/GUB2" target="_blank" class="project-button">GitHub Repo</a>
         </div>
       </div>
 
@@ -200,12 +203,29 @@
         </div>
       </div>
 
+      <div class="project-box" >
+        <h2 class="project-title">STM32 F4xx Series Support</h2>
+        <h3 class="project-type">RIT Electric Vehicle Team</h3>
+        <p class="project-desc">
+          I developed hardware driver support for the STM32 F4xx microcontroller series, 
+          expanding EVT's hardware-agnostic firmware API. This included implementing drivers for 
+          PWM, ADC, SPI, and timers using the STM32 HAL. To streamline configuration and integration, 
+          I applied STM32 CubeMX and CubeIDE, while referencing manufacturer datasheets and technical 
+          manuals to configure registers accurately.
+          <br /><br />
+          Note: These updates are integrated within EVT-core's lower-level support code, but the repository is available to explore!
+        </p>
+        <div class="prj-button-container">
+          <a href="https://github.com/RIT-EVT/EVT-core" target="_blank" class="project-button">GitHub Repo</a>
+        </div>
+      </div>
+
       <div class="project-box">
         <h2 class="project-title">Minecraft Mod</h2>
         <h3 class="project-type">Personal Project</h3>
         <p class="project-desc">
           Currency Mod is a Minecraft mod that significantly enhances
-          Minecraft’s trading mechanics and introduces a wealth of new content.
+          Minecraft's trading mechanics and introduces a wealth of new content.
           Coded using Java and JSON, the mod features custom villager trades,
           unique items, custom storage items, and new interactive blocks. With
           custom menus, block textures and crafting recipes, this mod is my
@@ -244,8 +264,24 @@
           following Scrum methodology.
         </p>
       </div>
-    </div
 
+      <div class="project-box">
+        <h2 class="project-title">KwziiCasino</h2>
+        <h3 class="project-type">Personal Project</h3>
+        <p class="project-desc">
+          KwziiCasino is an entertaining and interactive project I created to
+          simulate various casino games. Developed using Java and JavaFX, it
+          aims to provide an engaging experience with a diverse range of games
+          and activities. The project features classic casino games such as
+          blackjack, horse betting, and slots, as well as fun extras like coin
+          flips and a solvable Rubik's Cube. This was my first attempt at a project 
+          that wasn't a simple homework assignment, and I learned a lot from it.
+        </p>
+        <div class="prj-button-container">
+          <a class="project-button" target="_blank" href="https://github.com/tmb5932/KwziiCasino">GitHub Repo</a>
+        </div>
+      </div>
+    </div>
     <!-- Contact Me Section -->
     <div class="contact-area">
       <h1 class="section-title" id="contact">Get In Touch</h1>
