@@ -294,6 +294,13 @@ background-image: linear-gradient(180deg, rgb(183, 0, 183), purple);
   box-shadow: 0 6px rgba(255, 255, 255, 0.623);
   transform: translateY(-6px);
  }
+
+ .footer {
+  text-align: center;
+  font-size: 0.9rem;
+  color: rgb(107, 99, 83);
+  margin: 0px 0 10px;
+}
  
  .contact-button:active {
   transform: translateY(2px);
