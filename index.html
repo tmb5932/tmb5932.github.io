@@ -95,6 +95,25 @@
     <div class="project-grid-container">
       <!--Projects-->
       <div class="project-box">
+        <h2 class="project-title">Vehicle Control Unit</h2>
+        <h3 class="project-type">RIT Electric Vehicle Team</h3>
+        <p class="project-desc">
+          As a member of <a target="_blank" href="https://rit-evt.com/" class="internal-link">RIT's Electric Vehicle Team</a>, I developed the 
+          firmware for the Vehicle Control Unit (VCU), the main control system for our road electric motorcycle, REV3. It runs on an STM32F446 and manages two 
+          CAN buses: a raw CAN powertrain network and a CANopen-based accessory network.
+
+          Using C++ with ThreadX, I implemented multi-threaded coordination and integrated a Simulink-generated state machine running at 300 Hz to 
+          meet motor controller timing. I designed CAN message formats and created the CANopen object dictionary for the accessory bus.
+<br/>
+          I also implemented the Hardware Monitor (Hardmon) failover logic on a secondary STM32, which validates outputs and intervenes on faults. 
+          The system handles board-level faults, and supports drive-by-wire control, power distribution, and system health monitoring.
+        </p>
+        <div class="prj-button-container">
+          <a href="https://github.com/RIT-EVT/VCU" target="_blank" class="project-button">GitHub Repo</a>
+        </div>
+      </div>
+
+      <div class="project-box">
         <h2 class="project-title">Selection Menu Chip8 ROM</h2>
         <h3 class="project-type">Personal Project</h3>
         <p class="project-desc">
@@ -171,7 +190,7 @@
           <a href="https://github.com/tmb5932/custom-course-flowchart" target="_blank" class="project-button">GitHub Repo</a>
         </div>
       </div>
-
+<!-- 
       <div class="project-box">
         <h2 class="project-title">Personal Expense Tracker</h2>
         <h3 class="project-type">Personal Project</h3>
@@ -186,7 +205,7 @@
           <a href="https://github.com/tmb5932/personal-expense-tracker" target="_blank" class="project-button">GitHub Repo</a>
         </div>
       </div>
-
+ -->
       <div class="project-box" >
         <h2 class="project-title">Class Enrollment Script</h2>
         <h3 class="project-type">Personal Project</h3>
