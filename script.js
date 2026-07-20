@@ -21,7 +21,7 @@ document.getElementById("home-nav").addEventListener("click", function () {
 });
 
 document.getElementById("project-nav").addEventListener("click", function () {
-  const section = document.getElementById("projects");
+  const section = document.getElementById("current-projects");
   section.scrollIntoView({ behavior: "smooth" });
 });
 

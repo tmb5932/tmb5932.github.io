@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>404 - Page Not Found</title>
+
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/photo-page-style.css" />
+  <link href="https://fonts.googleapis.com/css?family=EB+Garamond" rel="stylesheet" />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="256x256"
+    href="/assets/favicons/favicon-256.png"
+  />
+
+  <style>
+    .error-page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .error-page .intro {
+      max-width: 700px;
+    }
+
+    .error-page .name {
+      line-height: 1;
+      font-size: clamp(2rem, 9vw, 4rem);
+    }
+
+    .error-code,
+    .error-title {
+      display: block;
+    }
+
+    .error-code {
+      font-size: 1.75em;
+      margin-bottom: 0.2em;
+    }
+
+    .error-title {
+      white-space: nowrap;
+      line-height: 1.1;
+      padding-bottom: 0.12em;
+    }
+
+    .error-page .intro-para {
+      margin-top: 1rem;
+    }
+
+    .error-page .back-home-button {
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="error-page">
+    <div class="intro">
+      <h1 class="name">
+        <span class="error-code">404</span>
+        <span class="error-title">Page Not Found</span>
+      </h1>
+      <p class="intro-para">
+        Not sure how you got here, but there's nothing here.
+      </p>
+      <button class="back-home-button" onclick="location.href='/'">← Back to Home</button>
+    </div>
+  </main>
+</body>
+</html>

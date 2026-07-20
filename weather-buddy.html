@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Weather Buddy - Project Photos</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="photo-page-style.css" />
+  <link href="https://fonts.googleapis.com/css?family=EB+Garamond" rel="stylesheet" />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="256x256"
+    href="/assets/favicons/favicon-256.png"
+  />
+</head>
+
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <button id="home-nav" onclick="location.href='/'">Home</button>
+    <button id="project-nav" onclick="location.href='/#projects'">Projects</button>
+    <button id="contact-nav" onclick="location.href='/#contact'">Contact</button>
+  </nav>
+
+  <!-- Page Header -->
+  <div class="intro-container" style="padding-top: 100px; text-align: center;">
+    <div class="intro">
+      <h1 class="name" style="line-height: 1;">Weather Buddy Gallery</h1>
+      <p class="intro-para" style="padding-top: 25px">
+        Weather Buddy is a small desktop display that makes checking the weather as easy as glancing
+        across the room. It connects to WiFi and pulls current outdoor conditions from a weather API,
+        while an onboard sensor measures the indoor temperature.
+        <br /><br />
+        An ESP32 brings everything together and displays both readings on a small TFT screen. The
+        software is written in ESP-IDF, and the project is still being developed as I refine the display
+        and turn the electronics into a finished desk companion.
+        <br /><br />
+        The photos below document the build as the project develops, from the first breadboard test
+        to the finished device in its 3D-printed case.
+      </p>
+    </div>
+  </div>
+
+  <!-- Image Gallery -->
+  <div class="gallery-container">
+    <img src="assets/weather-buddy/breadboard.jpeg" alt="Weather Buddy breadboard test" class="gallery-image" style="color:burlywood; text-align: center;" />
+    <p class="image-caption">
+      The first breadboard test, with every component connected and working together. This setup let me
+      test the display, indoor temperature sensor, WiFi connection, and weather API before moving the
+      project onto a permanent PCB.
+    </p>
+
+    <section class="in-progress" style="max-width: 500px; text-align: center; padding: 2rem; border: 2px dashed rgb(59, 173, 255); border-radius: 12px;">
+      <h2 style="color: rgb(59, 173, 255); margin-top: 0;">In Progress</h2>
+      <p class="image-caption" style="max-width: 100%; margin: 0; padding: 0;">
+        PCB assembly and final enclosure photos are coming as the build progresses.
+      </p>
+    </section>
+
+    <!-- PCB stage — uncomment when the photo is ready.
+    <img src="assets/weather-buddy/pcb.jpeg" alt="Weather Buddy working on its PCB" class="gallery-image" style="color:burlywood; text-align: center;" />
+    <p class="image-caption">
+      Weather Buddy running on the finished PCB for the first time, with all of the electronics working
+      together before designing and printing the case.
+    </p>
+    -->
+
+    <!-- Final stage — uncomment when the photo is ready.
+    <img src="assets/weather-buddy/final.jpeg" alt="Finished Weather Buddy working on a desk" class="gallery-image" style="color:burlywood; text-align: center;" />
+    <p class="image-caption">
+      The finished Weather Buddy working on my desk in its custom 3D-printed case, showing the current
+      outdoor weather alongside the temperature inside the room.
+    </p>
+    -->
+  </div>
+
+  <!-- Custom Back Button -->
+  <div style="text-align: center; margin-bottom: 5rem;">
+    <button class="back-home-button" onclick="location.href='/'">← Back to Home</button>
+  </div>
+</body>
+</html>

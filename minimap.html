@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pocket Minimap - Project Photos</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="photo-page-style.css" />
+  <link href="https://fonts.googleapis.com/css?family=EB+Garamond" rel="stylesheet" />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="256x256"
+    href="/assets/favicons/favicon-256.png"
+  />
+</head>
+
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <button id="home-nav" onclick="location.href='/'">Home</button>
+    <button id="project-nav" onclick="location.href='/#projects'">Projects</button>
+    <button id="contact-nav" onclick="location.href='/#contact'">Contact</button>
+  </nav>
+
+  <!-- Page Header -->
+  <div class="intro-container" style="padding-top: 100px; text-align: center;">
+    <div class="intro">
+      <h1 class="name" style="line-height: 1;">Pocket Minimap Gallery</h1>
+      <p class="intro-para" style="padding-top: 25px">
+        A real-time GPS minimap display built on an ESP32-P4 running ESP-IDF. Map tiles are stored as .bin 
+        files on a microSD card and rendered live using LVGL onto a 3.4in display from WaveShare.
+        <br /><br />
+        Originally inspired by <a class="internal-link" target="_blank" href="https://www.youtube.com/@GarageTinkering">GarageTinkering's</a> video and project, 
+        I optimized the graphics pipeline for a larger display and added a potentiometer for hardware brightness control, 
+        plus a persistent odometer that survives power cycles by writing to the SD card.
+        <br /><br />
+        The photos below document my final design and assembled project (because I forgot to take photos of the build process).
+      </p>
+    </div>
+  </div>
+
+  <!-- Image Gallery -->
+  <div class="gallery-container">
+    <img src="assets/minimap/case.jpeg" alt="Finished project" class="gallery-image" style="color:burlywood; text-align: center;"/>
+    <p class="image-caption">
+      Here is a side view of my final design. As you can see, I 3D-printed a custom case for it, although it went through a couple (8) revisions before I was happy with it.
+      You can also see the potentiometer on the side to control screen brightness, and a small cutout on top for the GPS antenna to sit in, for better signal.
+    </p>
+
+    <img src="assets/minimap/final.jpeg" alt="Finished device" class="gallery-image" style="color:burlywood; text-align: center;"/>
+    <p class="image-caption">The finished device! A working real-time GPS minimap you can take anywhere.</p>
+  </div>
+
+  <!-- Custom Back Button -->
+  <div style="text-align: center; margin-bottom: 5rem;">
+    <button class="back-home-button" onclick="location.href='/'">← Back to Home</button>
+  </div>
+</body>
+</html>

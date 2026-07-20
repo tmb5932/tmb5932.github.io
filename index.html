@@ -81,19 +81,91 @@
           Vehicle Team or tinkering with new programming languages, I enjoy
           every moment of the journey. <br /><br />
           When I'm not coding, you might find me playing Spikeball,
-          participating in the RIT Dodgeball Club, playing chess, or solving
-          puzzles. Feel free to explore my projects and get in touch if you'd
-          like to collaborate or chat. Thanks for stopping by!
+          participating in the RIT Dodgeball Club, reading fantasy books, 
+          playing videogames, or solving puzzles. Feel free to explore my projects 
+          and get in touch if you'd like to collaborate or chat. Thanks for stopping by!
         </p>
       </div>
       <!--Landing Page Image-->
       <img class="home-img" src="/assets/travis.jpg" alt="Introduction Photo" />
     </div>
 
-    <!--Projects Section-->
-    <h1 class="section-title" id="projects">My Projects</h1>
+    <!--Current Projects-->
+    <h1 class="section-title" id="current-projects">Current Projects</h1>
+    <div class="project-grid-container">
+
+      <div class="project-box"  style="max-width:1000px; justify-self: center;">
+        <h2 class="project-title">Weather Buddy</h2>
+        <h3 class="project-type">Personal Project</h3>
+        <p class="project-desc">
+          Not every project needs to be some awesome learning experience or super cool; sometimes it should just be useful.
+          <br>
+          Checking the weather usually means finding my phone and opening an app, so I built a little desk buddy instead. It 
+          pulls current weather data from a weather API over WiFi and reads indoor temperature from an onboard sensor, displaying 
+          outside conditions and inside temp together on a small TFT display. Written in ESP-IDF.
+        </p>
+        <div class="prj-button-container">
+          <a href="weather-buddy.html" class="project-button">Photos</a>
+          <a href="https://github.com/tmb5932/weather-buddy" target="_blank" class="project-button">GitHub Repo</a>
+        </div>
+      </div>
+      <div class="project-box"  style="max-width:1000px; justify-self: center;">
+        <h2 class="project-title">Autonomous Fixed Wing Drone</h2>
+        <h3 class="project-type">Personal Project</h3>
+        <p class="project-desc">
+          My friend and I are building a fully autonomous fixed-wing drone from scratch; both the aircraft itself and all the software that will eventually allow it to fly on its own. 
+          The plane runs an ESP32-S3 alongside the standard RC receiver, giving it an onboard brain capable of taking over from the pilot and executing autonomous flight.
+          <br>
+          All software is written in ESP-IDF, and I'm challenging myself to write as much as possible without relying on plug-and-play libraries, mainly surrounding device drivers and flight control logic and algorithms. The flight 
+          control system will be built around PID loops for roll, pitch, and eventually GPS-guided heading, with target milestones of stable autonomous level flight, altitude hold, 
+          waypoint following, and autonomous takeoff and landing. Longer term, we're thinking about mission-oriented capabilities like payload release or coordinated flight with a second drone.
+        </p>
+        <div class="prj-button-container">
+          <!-- <a href="fixed-wing-drone.html" class="project-button">Photos</a> -->
+          <a href="https://github.com/tmb5932/fixed-wing-drone" target="_blank" class="project-button">GitHub Repo</a>
+        </div>
+      </div>
+      
+    </div>
+
+<!-- PROJECT TEMPLATE!
+    <div class="project-box">
+      <h2 class="project-title">Super Duper Cool Project Name</h2>
+      <h3 class="project-type">Personal Project</h3>
+      <p class="project-desc">
+        Very interesting and exciting project description!
+      </p>
+      <div class="prj-button-container">
+        <a href="SOME_PAGE.html" class="project-button">Photos</a>
+        <a href="https://github.com/SOME_GITHUB_LINK" target="_blank" class="project-button">GitHub Repo</a>
+      </div>
+    </div>
+ -->
+
+
+    <!--Finished Projects Section-->
+    <h1 class="section-title" id="completed-projects">Completed Projects</h1>
     <div class="project-grid-container">
       <!--Projects-->
+
+      <div class="project-box">
+        <h2 class="project-title">Car Minimap</h2>
+        <h3 class="project-type">Personal Project</h3>
+        <p class="project-desc">
+          Inspired by <a class="internal-link" target="_blank" href="https://www.youtube.com/@GarageTinkering">GarageTinkering's</a> original <a class="internal-link" target="_blank" href="https://www.youtube.com/watch?v=sAp7oCB939c">concept</a>, I built a 
+          real-time GPS minimap display, running completely offline. Running on an ESP32-P4 with ESP-IDF, the device reads live GPS coordinates and 
+          renders your surroundings on-screen using LVGL, pulling pre-rendered map tiles from files stored on a microSD card.
+          Starting from GarageTinkerer's foundation, I optimized the image rendering to run smoother at a larger display resolution, then added a few features of my own: 
+          a potentiometer for hardware-controlled screen brightness, and a persistent odometer that tracks total distance traveled and survives power cycles by writing to the SD card.
+          Also, as I didn't have the custom dashboard GarageTinkerer has, I designed and 3d printed a case to hold the device in onShape.
+        </p>
+        <div class="prj-button-container">
+          <a href="minimap.html" class="project-button">Photos</a>
+          <a href="https://github.com/tmb5932/car-mini-map" target="_blank" class="project-button">GitHub Repo</a>
+        </div>
+      </div>
+
+
       <div class="project-box">
         <h2 class="project-title">Vehicle Control Unit</h2>
         <h3 class="project-type">RIT Electric Vehicle Team</h3>
@@ -134,8 +206,8 @@
         <h3 class="project-type">Personal Project</h3>
         <p class="project-desc">
           Using the Chip8 emulator I created, I made a retro-inspired handheld console. Built on a Raspberry Pi 3, 
-          SSD1309 OLED display, a custom-designed 4x4 keypad, and an active buzzer for sound. Using KiCad for making 
-          the custom keypad PCB, and soldering it all together, this Game Boy style device allows you to play Chip-8 games anywhere.
+          SSD1309 OLED display, a custom-designed 4x4 keypad, and an active buzzer for sound. SDL2 was replaced with phyiscal parts like my keypad, screen, and buzzer.
+          I used KiCad for making the custom keypad PCB, onShape to 3d model the case, and after soldering it all together, this Game Boy style device allows you to play Chip-8 games anywhere.
         </p>
         <div class="prj-button-container">
           <a href="chip8-handheld.html" class="project-button">Photos</a>
