@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Autonomous Fixed Wing Drone - Project Photos</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="photo-page-style.css" />
+  <link href="https://fonts.googleapis.com/css?family=EB+Garamond" rel="stylesheet" />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="256x256"
+    href="/assets/favicons/favicon-256.png"
+  />
+</head>
+
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <button id="home-nav" onclick="location.href='/'">Home</button>
+    <button id="project-nav" onclick="location.href='/#current-projects'">Projects</button>
+    <button id="contact-nav" onclick="location.href='/#contact'">Contact</button>
+  </nav>
+
+  <!-- Page Header -->
+  <div class="intro-container" style="padding-top: 100px; text-align: center;">
+    <div class="intro">
+      <h1 class="name" style="line-height: 1;">Fixed Wing Gallery</h1>
+      <p class="intro-para" style="padding-top: 25px">
+        My friend and I are building a fully autonomous fixed-wing drone from scratch, both the aircraft
+        itself and all of the software that will eventually let it fly on its own. The plane runs an
+        ESP32-S3 alongside the standard RC receiver, giving it an onboard brain capable of taking over
+        from the pilot and executing autonomous flight.
+        <br /><br />
+        Everything is written in ESP-IDF, and I'm challenging myself to avoid plug-and-play libraries,
+        mainly around device drivers and flight control logic, building the system around PID loops for
+        roll, pitch, and eventually GPS-guided heading.
+        <br /><br />
+        The photos below will document the build as the aircraft and flight controller come together.
+      </p>
+    </div>
+  </div>
+
+  <!-- Image Gallery -->
+  <div class="gallery-container">
+    <img src="assets/fixed-wing-drone/breadboard.jpeg" alt="Fixed wing flight controller breadboard test" class="gallery-image" style="color:burlywood; text-align: center;" />
+    <p class="image-caption">
+      The first breadboard test of the flight controller, with the ESP32-S3 and supporting sensors wired
+      up to confirm everything works before moving to a permanent board.
+    </p>
+
+    <img src="assets/fixed-wing-drone/pcb.jpeg" alt="Fixed wing flight controller PCB" class="gallery-image" style="color:burlywood; text-align: center;" />
+    <p class="image-caption">
+      The assembled flight controller PCB, with the ESP32-S3 and supporting components soldered in place.
+    </p>
+
+    <section class="in-progress" style="max-width: 500px; text-align: center; padding: 2rem; border: 2px dashed rgb(59, 173, 255); border-radius: 12px;">
+      <h2 style="color: rgb(59, 173, 255); margin-top: 0;">In Progress</h2>
+      <p class="image-caption" style="max-width: 100%; margin: 0; padding: 0;">
+        HITL testing, final installation, and flight test photos are coming as the project progresses.
+      </p>
+    </section>
+  </div>
+
+  <!-- Custom Back Button -->
+  <div style="text-align: center; margin-bottom: 5rem;">
+    <button class="back-home-button" onclick="location.href='/'">← Back to Home</button>
+  </div>
+</body>
+</html>

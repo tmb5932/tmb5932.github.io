@@ -20,7 +20,7 @@
   <!-- Navigation Bar -->
   <nav class="navbar">
     <button id="home-nav" onclick="location.href='/'">Home</button>
-    <button id="project-nav" onclick="location.href='/#projects'">Projects</button>
+    <button id="project-nav" onclick="location.href='/#current-projects'">Projects</button>
     <button id="contact-nav" onclick="location.href='/#contact'">Contact</button>
   </nav>
 
@@ -34,11 +34,9 @@
         while an onboard sensor measures the indoor temperature.
         <br /><br />
         An ESP32 brings everything together and displays both readings on a small TFT screen. The
-        software is written in ESP-IDF, and the project is still being developed as I refine the display
-        and turn the electronics into a finished desk companion.
+        software is written in ESP-IDF, with the electronics built on a custom PCB and held in a custom 3D-printed case.
         <br /><br />
-        The photos below document the build as the project develops, from the first breadboard test
-        to the finished device in its 3D-printed case.
+        The photos below document the build from the first breadboard test to the finished device sitting on my desk.
       </p>
     </div>
   </div>
@@ -52,28 +50,19 @@
       project onto a permanent PCB.
     </p>
 
-    <section class="in-progress" style="max-width: 500px; text-align: center; padding: 2rem; border: 2px dashed rgb(59, 173, 255); border-radius: 12px;">
-      <h2 style="color: rgb(59, 173, 255); margin-top: 0;">In Progress</h2>
-      <p class="image-caption" style="max-width: 100%; margin: 0; padding: 0;">
-        PCB assembly and final enclosure photos are coming as the build progresses.
-      </p>
-    </section>
-
-    <!-- PCB stage — uncomment when the photo is ready.
-    <img src="assets/weather-buddy/pcb.jpeg" alt="Weather Buddy working on its PCB" class="gallery-image" style="color:burlywood; text-align: center;" />
+    <img src="assets/weather-buddy/pcb.jpeg" alt="Weather Buddy's PCB" class="gallery-image" style="color:burlywood; text-align: center;" />
     <p class="image-caption">
-      Weather Buddy running on the finished PCB for the first time, with all of the electronics working
-      together before designing and printing the case.
+      Weather Buddy designed and printed PCB, forgot to take a photo of the assembled board before putting it in the case, so here is the unpopulated board. On the left is a 9-pin header for the TFT display, 
+      and on the right is the surface-mount spots for the indoor temperature sensor and its associated resistors and capacitor. The USB-C power input is in the top-left corner, and the ESP32-S3 dev-kit is in the 
+      center of the board. You may notice there is no place for the button on the back of the case, that is because I forgot to add it to the PCB design until after I got them printed, so I had to solder it directly to the ESP32 dev-kit...
     </p>
-    -->
 
-    <!-- Final stage — uncomment when the photo is ready.
-    <img src="assets/weather-buddy/final.jpeg" alt="Finished Weather Buddy working on a desk" class="gallery-image" style="color:burlywood; text-align: center;" />
+    <img src="assets/weather-buddy/final_front.jpeg" alt="Front of finished Weather Buddy working on a desk" class="gallery-image" style="color:burlywood; text-align: center;" />
+    <img src="assets/weather-buddy/final_side.jpeg" alt="Side of finished Weather Buddy working on a desk" class="gallery-image" style="color:burlywood; text-align: center;" />
     <p class="image-caption">
       The finished Weather Buddy working on my desk in its custom 3D-printed case, showing the current
-      outdoor weather alongside the temperature inside the room.
+      outdoor weather and temperature, the temperature inside the room, and the time. It has a USB-C power input and a small button on the back to enter setup mode and also toggle the display.
     </p>
-    -->
   </div>
 
   <!-- Custom Back Button -->
