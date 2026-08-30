@@ -115,9 +115,9 @@
           My friend and I are building a fully autonomous fixed-wing drone from scratch; both the aircraft itself and all the software that will eventually allow it to fly on its own.
           The plane runs an ESP32-S3, on a flight controller PCB I designed, alongside the standard RC receiver, giving it an onboard brain capable of taking over from the pilot and executing autonomous flight.
           <br>
-          All software is written in ESP-IDF, and I'm challenging myself to write as much as possible without relying on plug-and-play libraries, mainly surrounding device drivers and flight control logic and algorithms. The flight 
-          control system will be built around PID loops for roll, pitch, and eventually GPS-guided heading, with target milestones of stable autonomous level flight, altitude hold, 
-          waypoint following, and autonomous takeoff and landing. Longer term, we're thinking about mission-oriented capabilities like payload release or coordinated flight with a second drone.
+          All software is written in ESP-IDF, hand-writing device drivers and flight control logic instead of relying on plug-and-play libraries. The flight
+          control system is built around PID loops for roll, pitch, and GPS-guided heading with waypoint following, tuned and validated so far in a custom software-in-the-loop (SITL) simulator, with target milestones of stable autonomous
+          flight, altitude hold, and autonomous takeoff and landing. Longer term, the goal is coordinated flight with a second autonomous fixed-wing drone, ideally flying in tight formation at very close quarters.
         </p>
         <div class="prj-button-container">
           <a href="fixed-wing-drone.html" class="project-button">Photos</a>
