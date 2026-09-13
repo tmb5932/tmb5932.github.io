@@ -1,66 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Handheld Chip8 - Project Photos</title>
-
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="photo-page-style.css" />
-  <link href="https://fonts.googleapis.com/css?family=EB+Garamond" rel="stylesheet" />
-  <link
-  rel="icon"
-  type="image/png"
-  sizes="256x256"
-  href="/assets/favicons/favicon-256.png"
-  />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>chip8-handheld / build.log</title>
+<link rel="icon" type="image/png" sizes="256x256" href="/assets/favicons/favicon-256.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-  <!-- Navigation Bar -->
-  <nav class="navbar">
-    <button id="home-nav" onclick="location.href='/'">Home</button>
-    <button id="project-nav" onclick="location.href='/#current-projects'">Projects</button>
-    <button id="contact-nav" onclick="location.href='/#contact'">Contact</button>
-  </nav>
 
-  <!-- Page Header -->
-  <div class="intro-container" style="padding-top: 100px; text-align: center;">
-    <div class="intro">
-      <h1 class="name" style="line-height: 1;">Handheld Chip8 Gallery</h1>
-      <p class="intro-para" style="padding-top: 25px">
-        A custom-built handheld console using a Raspberry Pi, OLED display, 4x4 keypad, and a battery 
-        management system for mobile usage and long battery life. 
-        <br />Currently, I have finished all the electronic and software parts of this project, and am 
-        learning how to 3D model a case for 3D printing!
-        <br /><br />
-        The photos below show some of the important or exciting moments during the development process.
-      </p>
-    </div>
+<header class="topbar">
+  <div class="topbar-inner">
+    <span class="prompt-id"><span class="amber">tbrown@portfolio</span>:~/projects/history/chip8-handheld$</span>
+    <a class="back-link" href="index.html">← ./back</a>
   </div>
+</header>
 
-  <!-- Image Gallery -->
-  <div class="gallery-container">
-    <img src="assets/chip8/prototype.jpeg" alt="My first working prototype" class="gallery-image" style="color:burlywood; text-align: center;"/>
-    <p class="image-caption">My first successful prototype!</p>
-
-    <img src="assets/chip8/wiring.jpeg" alt="Internal wiring" class="gallery-image" style="color:burlywood; text-align: center;"/>
-    <p class="image-caption">
-      Created a 4x4 keypad with a custom made PCB, and learned how to solder to combine all my parts. 
-      I also added a ATXRaspi, Powerboost 1000C, and lithium ion battery to allow me to turn on and off the Raspberry Pi with a press of a button!<br />
-      The last thing I needed was a case to make it look presentable!
+<main class="wrap">
+  <div class="gallery-intro">
+    <span class="badge done">complete</span>
+    <span class="meta">personal project</span>
+    <h1>chip8-handheld / build.log</h1>
+    <p>
+      Using the Chip8 emulator I'd already written, I built a retro-inspired handheld console:
+      my first personal embedded project, and the first time I'd ever soldered or 3D-printed anything.
+      I developed and tested it on a Raspberry Pi 5, then moved the final build over to a Raspberry Pi 3,
+      hand-soldering a custom keypad PCB and an OLED display into a case I designed and 3D-printed myself.
     </p>
-
-    <img src="assets/chip8/final1.jpeg" alt="3D printed case" class="gallery-image" style="color:burlywood; text-align: center;"/>
-    <p class="image-caption">I designed and 3D-printed for the first time ever (shoutout onShape for being super beginner friendly)!<br />My handheld Chip8 Device is done!</p>
-  
-    <img src="assets/chip8/final2.jpeg" alt="Final Chip8 Handheld Device" class="gallery-image" style="color:burlywood; text-align: center;"/>
-    <p class="image-caption">Another angle of my Chip8, showing the power button, 'switch game' button, a status LED, and a charging port!</p>
   </div>
 
-  <!-- Custom Back Button -->
-  <div style="text-align: center; margin-bottom: 5rem;">
-    <button class="back-home-button" onclick="location.href='/'">← Back to Home</button>
+  <div class="report-specs">
+    <div><span class="amber">hardware:</span> Raspberry Pi 3 (final build), SSD1309 OLED (SPI), custom 4×4 keypad PCB, buzzer + status LED, 3D-printed case</div>
+    <div><span class="amber">software:</span> Rust, hand-written SPI display driver, full Chip8 interpreter with quirks support</div>
   </div>
+
+  <ul class="report-highlights">
+    <li>Planned to use an SSD1306 over I2C, but I2C was too slow for fast-updating game screens: switched to an SSD1309 over SPI, then had to write my own display driver from scratch since the crate I was using only supported I2C.</li>
+    <li>The Raspberry Pi 5 I developed on has a newer RP1 I/O controller that broke most standard GPIO libraries; ended up on rppal, one of the few that worked with it.</li>
+    <li>Learned to solder for this project: from the custom 4×4 keypad PCB to the rest of the wiring.</li>
+    <li>Runs my own game-selection ROM (written in Octo assembly) to switch between games without swapping files.</li>
+  </ul>
+
+  <div class="gallery-grid">
+    <figure class="gallery-item">
+      <img src="/assets/chip8/prototype.jpeg" width="600" height="450" alt="First working Chip8 handheld prototype" />
+      <figcaption class="cap">my first successful prototype</figcaption>
+    </figure>
+    <figure class="gallery-item">
+      <img src="/assets/chip8/wiring.jpeg" width="600" height="450" alt="Internal wiring of the Chip8 handheld" />
+      <figcaption class="cap">the custom 4×4 keypad PCB and internal wiring, plus an ATXRaspi, PowerBoost 1000C, and a lithium-ion battery to turn the Pi on/off with a button press</figcaption>
+    </figure>
+    <figure class="gallery-item">
+      <img src="/assets/chip8/final1.jpeg" width="600" height="450" alt="Finished Chip8 handheld in its 3D-printed case" />
+      <figcaption class="cap">the finished device in its 3D-printed case: designed and printed for the first time ever</figcaption>
+    </figure>
+    <figure class="gallery-item">
+      <img src="/assets/chip8/final2.jpeg" width="600" height="450" alt="Another angle of the finished Chip8 handheld" />
+      <figcaption class="cap">another angle, showing the power button, game-switch button, status LED, and charging port</figcaption>
+    </figure>
+  </div>
+
+  <div class="feed-links" style="margin-bottom: 4rem;">
+    <a href="https://github.com/tmb5932/chip8-embedded" target="_blank" rel="noopener">github</a>
+  </div>
+</main>
+
+<footer>© 2026 Travis Brown · exit 0</footer>
+
 </body>
 </html>

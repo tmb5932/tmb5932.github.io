@@ -3,37 +3,36 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>404: Not Found</title>
+<title>Message Sent</title>
 <link rel="icon" type="image/png" sizes="256x256" href="/assets/favicons/favicon-256.png" />
 <meta name="robots" content="noindex" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css" />
-<style>
-  .error-page {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
-  }
-</style>
 </head>
 <body>
 
-<main class="error-page">
-  <section class="term-window" style="max-width: 620px; width: 100%; margin: 0;">
+<header class="topbar">
+  <div class="topbar-inner">
+    <span class="prompt-id"><span class="amber">tbrown@portfolio</span>:~/contact$</span>
+    <a class="back-link" href="index.html">← ./back</a>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="term-window" style="max-width: 600px; margin: 4rem auto 5rem;">
     <div class="term-titlebar">
       <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
-      <span class="filename">404.sh · 80x24</span>
+      <span class="filename">send.sh · 80x24</span>
     </div>
     <div style="padding: 2rem;">
-      <div class="term-line"><span class="amber">$</span> cd /this/page</div>
-      <div class="term-line muted">bash: cd: /this/page: No such file or directory</div>
-      <h1 class="name" style="font-size: 1.9rem; margin: 1.5rem 0 0.75rem;">404: Not Found</h1>
+      <div class="term-line"><span class="amber">$</span> ./send</div>
+      <div class="term-line muted">transmitting message...</div>
+      <div class="term-line"><span class="badge done">ok</span>&nbsp; message delivered</div>
+      <h1 class="name" style="font-size: 1.6rem; margin: 1.5rem 0 0.75rem;">Message sent</h1>
       <p class="bio" style="max-width: 100%;">
-        Not sure how you got here, but there's nothing here.<span class="cursor"></span>
+        Thanks for reaching out. I'll get back to you as soon as I can.<span class="cursor"></span>
       </p>
       <div class="feed-links" style="margin-top: 2rem;">
         <a href="index.html">back home</a>
@@ -41,6 +40,8 @@
     </div>
   </section>
 </main>
+
+<footer>© 2026 Travis Brown · exit 0</footer>
 
 </body>
 </html>

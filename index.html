@@ -1,462 +1,359 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Travis Brown</title>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Travis Brown · Embedded Software Engineer</title>
+<meta name="description" content="Travis Brown, RIT Computer Science (Accelerated BS/MS) student focused on embedded software and firmware engineering." />
+<link rel="icon" type="image/x-icon" href="/assets/favicons/favicon.ico" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicons/favicon-48.png" />
+<link rel="icon" type="image/png" sizes="64x64" href="/assets/favicons/favicon-64.png" />
+<link rel="icon" type="image/png" sizes="128x128" href="/assets/favicons/favicon-128.png" />
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/favicons/favicon-192.png" />
+<link rel="icon" type="image/png" sizes="256x256" href="/assets/favicons/favicon-256.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/favicon-apple-touch.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
-    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="/assets/favicons/favicon-16.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="/assets/favicons/favicon-32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="48x48"
-      href="/assets/favicons/favicon-48.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="64x64"
-      href="/assets/favicons/favicon-64.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="128x128"
-      href="/assets/favicons/favicon-128.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="192x192"
-      href="/assets/favicons/favicon-192.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="256x256"
-      href="/assets/favicons/favicon-256.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="/assets/favicons/favicon-apple-touch.png"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=EB Garamond"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" type="text/css" href="style.css" />
-  </head>
-  <!--Navigation Bar-->
-  <nav class="navbar">
-    <button id="home-nav">Home</button>
-    <button id="project-nav">Projects</button>
-    <button id="contact-nav">Contact</button>
-  </nav>
-  <body>
-    <!--About Me Section-->
-    <div class="intro-container" id="home">
-      <div class="intro">
-        <h1 id="name" class="name">Travis Brown</h1>
-        <br />
-        <p class="school">Rochester Institute of Technology (RIT)</p>
-        <p class="program">Computer Science Major</p>
-        <br />
-        <p class="intro-para">
-          Hello! I'm Travis Brown. I love diving into the world of embedded software
-          and electronics, always eager to learn and explore new
-          things. Whether I'm working on embedded systems with the RIT Electric
-          Vehicle Team or tinkering with new programming languages, I enjoy
-          every moment of the journey. <br /><br />
-          When I'm not working on my personal projects, you might find me playing Spikeball,
-          participating in the RIT Dodgeball Club, reading fantasy books, 
-          playing videogames, or solving puzzles. Feel free to explore my projects 
-          and get in touch if you'd like to collaborate or chat. Thanks for stopping by!
-        </p>
-      </div>
-      <!--Landing Page Image-->
-      <img class="home-img" src="/assets/travis.jpg" alt="Introduction Photo" />
+<header class="topbar">
+  <div class="topbar-inner">
+    <span class="prompt-id"><span class="amber">tbrown@portfolio</span>:~$</span>
+    <nav aria-label="Primary">
+      <ul class="topnav">
+        <li><a href="#about">about</a></li>
+        <li><a href="#experience">experience</a></li>
+        <li><a href="#projects">projects</a></li>
+        <li><a href="#contact">contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section id="about" class="term-window">
+    <div class="term-titlebar">
+      <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+      <span class="filename">about.sh · 80x24</span>
     </div>
-
-<!-- ACTIVE PROJECT TEMPLATE!
-    <div class="project-box" style="max-width:1000px; justify-self: center;">
-      <h2 class="project-title">Super Duper Cool In-Progress Project Name</h2>
-      <h3 class="project-type">Personal Project</h3>
-      <p class="project-desc">
-        Very interesting and exciting project description, still in progress!
-      </p>
-      <div class="prj-button-container">
-        <a href="SOME_PAGE.html" class="project-button">Photos</a>
-        <a href="https://github.com/SOME_GITHUB_LINK" target="_blank" class="project-button">GitHub Repo</a>
-      </div>
-    </div>
- -->
-
-    <!--Current Projects-->
-    <h1 class="section-title" id="current-projects">Current Projects</h1>
-    <div class="project-grid-container">
-
-      <div class="project-box"  style="max-width:1000px; justify-self: center;">
-        <h2 class="project-title">Autonomous Fixed Wing Drone</h2>
-        <h3 class="project-type">Personal Project</h3>
-        <p class="project-desc">
-          My friend and I are building a fully autonomous fixed-wing drone from scratch; both the aircraft itself and all the software that will eventually allow it to fly on its own.
-          The plane runs an ESP32-S3, on a flight controller PCB I designed, alongside the standard RC receiver, giving it an onboard brain capable of taking over from the pilot and executing autonomous flight.
-          <br>
-          All software is written in ESP-IDF, hand-writing device drivers and flight control logic instead of relying on plug-and-play libraries. The flight
-          control system is built around PID loops for roll, pitch, and GPS-guided heading with waypoint following, tuned and validated so far in a custom software-in-the-loop (SITL) simulator, with target milestones of stable autonomous
-          flight, altitude hold, and autonomous takeoff and landing. Longer term, the goal is coordinated flight with a second autonomous fixed-wing drone, ideally flying in tight formation at very close quarters.
-        </p>
-        <div class="prj-button-container">
-          <a href="fixed-wing-drone.html" class="project-button">Photos</a>
-          <a href="https://github.com/tmb5932/fixed-wing-drone" target="_blank" class="project-button">GitHub Repo</a>
-        </div>
-      </div>
-
-    </div>
-
-<!-- PROJECT TEMPLATE!
-    <div class="project-box">
-      <h2 class="project-title">Super Duper Cool Project Name</h2>
-      <h3 class="project-type">Personal Project</h3>
-      <p class="project-desc">
-        Very interesting and exciting project description!
-      </p>
-      <div class="prj-button-container">
-        <a href="SOME_PAGE.html" class="project-button">Photos</a>
-        <a href="https://github.com/SOME_GITHUB_LINK" target="_blank" class="project-button">GitHub Repo</a>
-      </div>
-    </div>
- -->
-  
-
-    <!--Finished Projects Section-->
-    <h1 class="section-title" id="completed-projects">Completed Projects</h1>
-    <div class="project-grid-container">
-      <!--Projects-->
-
-      <div class="project-box">
-        <h2 class="project-title">Weather Buddy</h2>
-        <h3 class="project-type">Personal Project</h3>
-        <p class="project-desc">
-          Not every project needs to be some awesome learning experience or super cool; sometimes it should just be useful.
-          <br>
-          Checking the weather usually means finding my phone and opening an app, so I built a little desk buddy instead. It
-          pulls current weather data from a weather API over WiFi and reads indoor temperature from an onboard sensor, displaying
-          outside conditions and inside temp together on a small TFT display. Written in ESP-IDF and running on a custom PCB I designed for it.
-        </p>
-        <div class="prj-button-container">
-          <a href="weather-buddy.html" class="project-button">Photos</a>
-          <a href="https://github.com/tmb5932/weather-buddy" target="_blank" class="project-button">GitHub Repo</a>
-        </div>
-      </div>
-
-      <div class="project-box">
-        <h2 class="project-title">Car Minimap</h2>
-        <h3 class="project-type">Personal Project</h3>
-        <p class="project-desc">
-          Inspired by <a class="internal-link" target="_blank" href="https://www.youtube.com/@GarageTinkering">GarageTinkering's</a> original <a class="internal-link" target="_blank" href="https://www.youtube.com/watch?v=sAp7oCB939c">concept</a>, I built a 
-          real-time GPS minimap display, running completely offline. Running on an ESP32-P4 with ESP-IDF, the device reads live GPS coordinates and 
-          renders your surroundings on-screen using LVGL, pulling pre-rendered map tiles from files stored on a microSD card.
-          Starting from GarageTinkerer's foundation, I optimized the image rendering to run smoother at a larger display resolution, then added a few features of my own: 
-          a potentiometer for hardware-controlled screen brightness, and a persistent odometer that tracks total distance traveled and survives power cycles by writing to the SD card.
-          Also, as I didn't have the custom dashboard GarageTinkerer has, I designed and 3d printed a case to hold the device in onShape.
-        </p>
-        <div class="prj-button-container">
-          <a href="minimap.html" class="project-button">Photos</a>
-          <a href="https://github.com/tmb5932/car-mini-map" target="_blank" class="project-button">GitHub Repo</a>
-        </div>
-      </div>
-
-
-      <div class="project-box">
-        <h2 class="project-title">Vehicle Control Unit</h2>
-        <h3 class="project-type">RIT Electric Vehicle Team</h3>
-        <p class="project-desc">
-          As a member of <a target="_blank" href="https://rit-evt.com/" class="internal-link">RIT's Electric Vehicle Team</a>, I developed the 
-          firmware for the Vehicle Control Unit (VCU), the main control system for our road electric motorcycle, REV3. It runs on an STM32F446 and manages two 
-          CAN buses: a raw CAN powertrain network and a CANopen-based accessory network.
-
-          Using C++ with ThreadX, I implemented multi-threaded coordination and integrated a Simulink-generated state machine running at 300 Hz to 
-          meet motor controller timing. I designed CAN message formats and created the CANopen object dictionary for the accessory bus.
-          <br/>
-<!--
-          I also implemented the Hardware Monitor (Hardmon) failover logic on a secondary STM32, which validates outputs and intervenes on faults. 
--->The uc handles board-level faults, and supports drive-by-wire control, power distribution, and system health monitoring.
-        </p>
-        <div class="prj-button-container">
-          <a href="https://github.com/RIT-EVT/VCU" target="_blank" class="project-button">GitHub Repo</a>
-        </div>
-      </div>
-
-      <div class="project-box">
-        <h2 class="project-title">Selection Menu Chip8 ROM</h2>
-        <h3 class="project-type">Personal Project</h3>
-        <p class="project-desc">
-          After creating my Chip8 emulator, I wanted to make my own ROM, not only partially because I wanted to write a program in assembly.
-          This ROM is a menu that gives a dynamic number of options fed into the memory of the Chip8 before the ROM was started. It allows the user
-          to select an option, and that option is available to the Emulator program to do something with. In my case, I use it to select what game I wanted to play.
-          <br>I used <a class="internal-link" target="_blank" href="https://johnearnest.github.io/Octo/">John Earnest's Octo</a> to make this.
-        </p>
-        <div class="prj-button-container">
-          <a href="octo-menu-viewer.html" class="project-button">Web Example</a>
-          <a href="https://github.com/tmb5932/octo-menu" target="_blank" class="project-button">GitHub Repo</a>
-        </div>
-      </div>
-
-      <div class="project-box">
-        <h2 class="project-title">Handheld Chip8 </h2>
-        <h3 class="project-type">Personal Project</h3>
-        <p class="project-desc">
-          Using the Chip8 emulator I created, I made a retro-inspired handheld console. Built on a Raspberry Pi 3, 
-          SSD1309 OLED display, a custom-designed 4x4 keypad, and an active buzzer for sound. SDL2 was replaced with phyiscal parts like my keypad, screen, and buzzer.
-          I used KiCad for making the custom keypad PCB, onShape to 3d model the case, and after soldering it all together, this Game Boy style device allows you to play Chip-8 games anywhere.
-        </p>
-        <div class="prj-button-container">
-          <a href="chip8-handheld.html" class="project-button">Photos</a>
-          <a href="https://github.com/tmb5932/chip8-embedded" target="_blank" class="project-button">GitHub Repo</a>
-        </div>
-      </div>
-
-      <div class="project-box">
-        <h2 class="project-title">Chip8 Emulator</h2>
-        <h3 class="project-type">Personal Project</h3>
-        <p class="project-desc">
-          Created in Rust, this program emulates a Chip8, which is a virtual machine from the '70s. That technically 
-          makes this an interpreter, but I've found emulator to be a more commonly understood term. This was my first time 
-          using Rust, or making an emulator, so the process was probably slower than it otherwise would have been, 
-          but I learned a lot about Rust and the internals of computers. The emulator uses SDL2 to display graphics, 
-          audio, and retrieve keyboard input.
-        </p>
-        <div class="prj-button-container">
-          <a href="https://github.com/tmb5932/chip8-emulator" target="_blank" class="project-button">GitHub Repo</a>
-        </div>
-      </div>
-
-      <div class="project-box">
-        <h2 class="project-title">Gateway Utility Board: GPS Telemetry</h2>
-        <h3 class="project-type">RIT Electric Vehicle Team</h3>
-        <p class="project-desc">
-          As a member of <a target="_blank" href="https://rit-evt.com/" class="internal-link">RIT's Electric Vehicle Team</a>, I 
-          enhanced the Gateway Utility Board (GUB), which logs onboard bus data from our electric motorcycles for debugging and 
-          analysis. I integrated a GPS module to capture real-time position and speed, expanding the board's role in telemetry 
-          and performance tracking. This data also lays the groundwork for a proof of concept with LoRa wireless communication, 
-          enabling future real-time transmission from the bike to a remote computer. 
-          <br>
-          Learn more about our firmware work at <a href="https://github.com/RIT-EVT" target="_blank" class="internal-link">EVT's Official GitHub</a>.
-        </p>
-        <div class="prj-button-container">
-          <a href="https://github.com/RIT-EVT/GUB2" target="_blank" class="project-button">GitHub Repo</a>
-        </div>
-      </div>
-
-      <div class="project-box">
-        <h2 class="project-title">Custom Course Flowchart Maker</h2>
-        <h3 class="project-type">Personal Project</h3>
-        <p class="project-desc">
-          Developed a dynamic, interactive course planning tool using Flask (Python), 
-          JS, HTML, CSS, and SQLite. This web application allows students to 
-          customize and visualize their course schedules. Inspired by the rigid course 
-          flowcharts provided by my university, I developed this tool to offer a more 
-          flexible and personalized course planning experience. Instead of manually 
-          editing text files every semester, students can now visually organize their 
-          academic path in a more efficient and interactive way.
-        </p>
-        <div class="prj-button-container">
-          <a href="https://github.com/tmb5932/custom-course-flowchart" target="_blank" class="project-button">GitHub Repo</a>
-        </div>
-      </div>
-<!-- 
-      <div class="project-box">
-        <h2 class="project-title">Personal Expense Tracker</h2>
-        <h3 class="project-type">Personal Project</h3>
-        <p class="project-desc">
-          This is a web app that I created to help me keep track of my expenses.
-          Using SQLite and a Python Flask back-end, along with HTML, CSS, and JS
-          front-end, this app allows me to input my expenses and categorize
-          them. It also provides a visual representation of my spending habits,
-          allowing me to see where my money is going month by month.
-        </p>
-        <div class="prj-button-container">
-          <a href="https://github.com/tmb5932/personal-expense-tracker" target="_blank" class="project-button">GitHub Repo</a>
-        </div>
-      </div>
- -->
-      <div class="project-box" >
-        <h2 class="project-title">Class Enrollment Script</h2>
-        <h3 class="project-type">Personal Project</h3>
-        <p class="project-desc">
-          This project was created to speed up my enrollment into my selected
-          classes for the next semester. Due to many students getting access to
-          enrolling in classes at the same time, it turns into a race. This
-          script uses Selenium to help speed up enrolling in the classes I want,
-          to improve my chances of getting in. It is designed for automating the
-          enrollment process in RIT's online academic portal (SIS).
-        </p>
-        <div class="prj-button-container">
-          <a href="https://github.com/tmb5932/auto-enroll-rit" target="_blank" class="project-button">GitHub Repo</a>
-        </div>
-      </div>
-
-      <div class="project-box" >
-        <h2 class="project-title">STM32 F4xx Series Support</h2>
-        <h3 class="project-type">RIT Electric Vehicle Team</h3>
-        <p class="project-desc">
-          I developed hardware driver support for the STM32 F4xx microcontroller series, 
-          expanding EVT's hardware-agnostic firmware API. This included implementing drivers for 
-          PWM, ADC, SPI, and timers using the STM32 HAL. To streamline configuration and integration, 
-          I applied STM32 CubeMX and CubeIDE, while referencing manufacturer datasheets and technical 
-          manuals to configure registers accurately.
+    <div class="term-body">
+      <div>
+        <div class="term-line"><span class="amber">$</span> whoami</div>
+        <h1 class="name">Travis Brown</h1>
+        <div class="role-line">Embedded Software Engineer &middot; RIT Accelerated BS/MS</div>
+        <div class="term-line muted">$ cat about.txt</div>
+        <p class="bio">
+          Computer Science major at RIT, focused on embedded software and
+          firmware engineering. Member of RIT's Electric Vehicle Team, writing embedded firmware
+          for our electric motorcycle.
           <br /><br />
-          Note: These updates are integrated within EVT-core's lower-level support code, but the repository is available to explore!
-        </p>
-        <div class="prj-button-container">
-          <a href="https://github.com/RIT-EVT/EVT-core" target="_blank" class="project-button">GitHub Repo</a>
-        </div>
-      </div>
-
-      <div class="project-box">
-        <h2 class="project-title">Minecraft Mod</h2>
-        <h3 class="project-type">Personal Project</h3>
-        <p class="project-desc">
-          Currency Mod is a Minecraft mod that significantly enhances
-          Minecraft's trading mechanics and introduces a wealth of new content.
-          Coded using Java and JSON, the mod features custom villager trades,
-          unique items, custom storage items, and new interactive blocks. With
-          custom menus, block textures and crafting recipes, this mod is my
-          exploration and experimentation with Minecraft modding.
-        </p>
-        <div class="prj-button-container">
-          <a href="https://github.com/tmb5932/currencymod" target="_blank" class="project-button">GitHub Repo</a>
-        </div>
-      </div>
-
-      <div class="project-box">
-        <h2 class="project-title">Studio TVWT</h2>
-        <h3 class="project-type">CSCI 320 Principles of Data Management Semester Team Project</h3>
-        <p class="project-desc">
-          Studio TVWT is a command-line interface (CLI) designed to interact with 
-          a PostgreSQL-based movies database. The project allows users to manage 
-          movies, rate them, create collections, follow users, track watch history, 
-          and receive personalized recommendations based on play history and community trends.
-          This was created as a semester-long project for my Principles of Data Management course,
-          with a similar idea to Goodreads, but for movies. Completed with a team of 3 peers.
-        </p>
-        <div class="prj-button-container">
-          <a href="https://github.com/tmb5932/studiotvwt" target="_blank" class="project-button">GitHub Repo</a>
-        </div>
-      </div>
-
-      <div class="project-box">
-        <h2 class="project-title">U-Fund: Homeless Shelter</h2>
-        <h3 class="project-type">SWEN 261 Software Engineering Semester Team Project</h3>
-        <p class="project-desc">
-          U-Fund is a web-based donation platform designed to support a non-profit homeless 
-          shelter by streamlining the donation process. Developed as a team project, this 
-          application allows users to buy items based on the shelter's needs through a 
-          digital "cupboard." Built with an Angular front-end and a Java Spring backend, 
-          this project was a valuable full-stack experience. Completed with a team of 3 peers
-          following Scrum methodology.
+          Beyond that: Spikeball, RIT Dodgeball Club, hiking, fantasy novels, video
+          games, and puzzles.<span class="cursor"></span>
         </p>
       </div>
-
-      <div class="project-box">
-        <h2 class="project-title">KwziiCasino</h2>
-        <h3 class="project-type">Personal Project</h3>
-        <p class="project-desc">
-          KwziiCasino is an entertaining and interactive project I created to
-          simulate various casino games. Developed using Java and JavaFX, it
-          aims to provide an engaging experience with a diverse range of games
-          and activities. The project features classic casino games such as
-          blackjack, horse betting, and slots, as well as fun extras like coin
-          flips and a solvable Rubik's Cube. This was my first attempt at a project 
-          that wasn't a simple homework assignment, and I learned a lot from it.
-        </p>
-        <div class="prj-button-container">
-          <a class="project-button" target="_blank" href="https://github.com/tmb5932/KwziiCasino">GitHub Repo</a>
+      <div class="photo-term">
+        <div class="term-titlebar">
+          <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
         </div>
+        <img src="/assets/travis.jpg" width="600" height="800" alt="Portrait of Travis Brown" />
       </div>
     </div>
-    <!-- Contact Me Section -->
-    <div class="contact-area">
-      <h1 class="section-title" id="contact">Get In Touch</h1>
-      <p class="contact-text">
-        Check out what I'm up to at Github or LinkedIn, look at my resume, or
-        send me an email through the contact form.
-      </p>
+  </section>
 
-      <!--Social Buttons in Contact Section-->
-      <div id="contact-button-container">
-        <button class="contact-button" id="github-contact">GitHub</button>
-        <button class="contact-button" id="linkedin-contact">LinkedIn</button>
-        <button class="contact-button" id="resume-contact">Resume</button>
+  <section id="experience">
+    <div class="section-header">
+      <div class="comment">// where i've worked</div>
+      <h2>experience/</h2>
+    </div>
+    <div class="ls-listing">
+      <div class="ls-header">$ cat experience.log</div>
+      <div class="exp-row">
+        <div>
+          <div class="exp-title">Embedded Software Intern</div>
+          <div class="exp-company">GE Vernova</div>
+        </div>
+        <div class="exp-dates">May 2026 – Present</div>
       </div>
+      <div class="exp-row">
+        <div>
+          <div class="exp-title">Software QA Automation Intern</div>
+          <div class="exp-company">Lockheed Martin</div>
+        </div>
+        <div class="exp-dates">May 2025 – Aug 2025</div>
+      </div>
+      <div class="exp-row">
+        <div>
+          <div class="exp-title">Embedded Software Engineer</div>
+          <div class="exp-company">RIT Electric Vehicle Team</div>
+        </div>
+        <div class="exp-dates">Aug 2023 – Present</div>
+      </div>
+    </div>
+  </section>
 
-      <!--Script to make buttons work-->
-      <script type="text/javascript" src="script.js"></script>
+  <section id="projects">
+    <div class="section-header">
+      <div class="comment">// what's running now, and what's done</div>
+      <h2>projects/primary/</h2>
+    </div>
 
-      <!--Form to send me an email-->
-      <div class="form-container">
-        <form
-          class="form"
-          action="https://api.web3forms.com/submit"
-          subject="New Form Submission!"
-          method="POST"
-        >
-          <div class="form-group">
-            <h2 id="contact-header">Contact Me</h2>
-            <label for="email">Your Email</label>
-            <input
-              type="hidden"
-              name="access_key"
-              value="d7d6fbb5-a696-4b24-8369-8d10061496eb"
-            />
-            <input
-              type="text"
-              id="email"
-              name="email"
-              placeholder="name@domain.com"
-              required="true"
-              aria-required="true"
-            />
+    <div class="session-feed">
+
+      <article class="feed-entry">
+        <div class="feed-card">
+          <div class="feed-head">
+            <div>
+              <h3>fixed-wing-drone</h3>
+              <span class="feed-affil">personal project · jun 2026 – present</span>
+            </div>
+            <span class="badge progress">in_progress</span>
           </div>
-          <div class="form-group">
-            <label for="textarea">Message</label>
-            <textarea
-              name="message"
-              id="textarea"
-              placeholder="Type your message here..."
-              rows="10"
-              cols="50"
-              required="true"
-            ></textarea>
-            <input
-              type="checkbox"
-              name="botcheck"
-              class="hidden"
-              style="display: none"
-            />
-            <!-- Custom Confirmation / Success Page -->
-            <!-- <input type="hidden" name="redirect" value="https://tmb5932/github.io/thanks.html"> -->
+          <div class="feed-body">
+            <div>
+              <div class="feed-specs">
+                <div><span class="amber">hardware:</span> ESP32-S3, custom carrier PCB (KiCad)</div>
+                <div><span class="amber">software:</span> C/C++, ESP-IDF v5.5, PID + Madgwick AHRS, SITL-validated nav</div>
+              </div>
+              <p class="feed-desc">
+                Building a fully autonomous fixed-wing drone from scratch with a friend: the aircraft and
+                the software. Bench/ground-tested so far: RC pass-through, IMU/GPS drivers, and PID attitude
+                control all run against live sensor data, with heading/waypoint control validated in a
+                custom SITL simulator ahead of first flight.
+              </p>
+              <div class="feed-links">
+                <a href="https://github.com/tmb5932/fixed-wing-drone" target="_blank" rel="noopener">github</a>
+                <a href="fixed-wing-drone.html">build.log</a>
+              </div>
+            </div>
+            <div class="feed-photo-term">
+              <div class="term-titlebar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
+              <img src="/assets/fixed-wing-drone/pcb.jpeg" width="600" height="450" alt="Assembled flight controller PCB for the autonomous fixed-wing drone" />
+            </div>
           </div>
-          <button class="form-submit-btn" type="submit">Submit</button>
+        </div>
+      </article>
+
+      <article class="feed-entry done">
+        <div class="feed-card">
+          <div class="feed-head">
+            <div>
+              <h3>vehicle-control-unit</h3>
+              <span class="feed-affil">rit electric vehicle team · aug 2023 – present</span>
+            </div>
+            <span class="badge done">complete</span>
+          </div>
+          <div class="feed-body">
+            <div>
+              <div class="feed-specs">
+                <div><span class="amber">hardware:</span> STM32F446, dual CAN bus (raw CAN + CANopen)</div>
+                <div><span class="amber">software:</span> C++, ThreadX, 300Hz Simulink-generated state machine</div>
+              </div>
+              <p class="feed-desc">
+                Firmware for the main control system of REV3, RIT EVT's electric motorcycle. Handles
+                board-level faults, drive-by-wire control, power distribution, and system health monitoring.
+                Designed the CAN message formats and CANopen object dictionary.
+              </p>
+              <div class="feed-links">
+                <a href="https://github.com/RIT-EVT/VCU" target="_blank" rel="noopener">github</a>
+              </div>
+            </div>
+            <div class="feed-diagram">
+              <div class="line"><span class="amber">[STM32F446 / VCU]</span></div>
+              <div class="line">&nbsp;&nbsp;├── CAN (raw) ─── powertrain network</div>
+              <div class="line">&nbsp;&nbsp;└── CANopen ──── accessory network</div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="feed-entry done">
+        <div class="feed-card">
+          <div class="feed-head">
+            <div>
+              <h3>weather-buddy</h3>
+              <span class="feed-affil">personal project · jun 2026 – aug 2026</span>
+            </div>
+            <span class="badge done">complete</span>
+          </div>
+          <div class="feed-body">
+            <div>
+              <div class="feed-specs">
+                <div><span class="amber">hardware:</span> ESP32-S3, custom PCB, TMP102 sensor, 3.5in SPI TFT</div>
+                <div><span class="amber">software:</span> ESP-IDF v5.4, OpenWeather API, captive-portal setup</div>
+              </div>
+              <p class="feed-desc">
+                A desk device that beats reaching for my phone: pulls conditions from OpenWeather over
+                WiFi, reads indoor temp locally, and shows both on a 3.5in TFT, right down to its own
+                WiFi/location setup portal.
+              </p>
+              <div class="feed-links">
+                <a href="https://github.com/tmb5932/weather-buddy" target="_blank" rel="noopener">github</a>
+                <a href="weather-buddy.html">build.log</a>
+              </div>
+            </div>
+            <div class="feed-photo-term">
+              <div class="term-titlebar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
+              <img src="/assets/weather-buddy/final_front.jpeg" width="600" height="450" alt="Finished Weather Buddy desk device, front view" />
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="feed-entry done">
+        <div class="feed-card">
+          <div class="feed-head">
+            <div>
+              <h3>car-minimap</h3>
+              <span class="feed-affil">personal project · dec 2025 – jun 2026</span>
+            </div>
+            <span class="badge done">complete</span>
+          </div>
+          <div class="feed-body">
+            <div>
+              <div class="feed-specs">
+                <div><span class="amber">hardware:</span> ESP32-P4 (Waveshare 3.4in), microSD, brightness pot</div>
+                <div><span class="amber">software:</span> ESP-IDF + LVGL, own QGIS-based tile-generation pipeline</div>
+              </div>
+              <p class="feed-desc">
+                Real-time, fully offline map display: renders live surroundings from offline map tiles
+                on a microSD card. Added a brightness pot and a persistent odometer, designed + 3D-printed
+                the enclosure in OnShape.
+              </p>
+              <div class="feed-links">
+                <a href="https://github.com/tmb5932/car-mini-map" target="_blank" rel="noopener">github</a>
+                <a href="minimap.html">build.log</a>
+              </div>
+            </div>
+            <div class="feed-photo-term">
+              <div class="term-titlebar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
+              <img src="/assets/minimap/final.jpeg" width="600" height="450" alt="Finished Car Minimap device in its 3D-printed enclosure" />
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="section-header">
+      <div class="comment">// smaller builds, class projects, and old experiments</div>
+      <h2>projects/history/</h2>
+    </div>
+
+    <div class="ls-listing">
+      <div class="ls-header">$ ls -la ./history</div>
+
+      <div class="ls-row">
+        <span class="ls-name">gateway-utility-board</span>
+        <span class="ls-tag">rit_evt</span>
+        <span class="ls-desc">GPS module added to EVT's onboard telemetry board.</span>
+        <span class="ls-link"><a href="https://github.com/RIT-EVT/GUB2" target="_blank" rel="noopener">github →</a></span>
+      </div>
+      <div class="ls-row">
+        <span class="ls-name">stm32-f4xx-hal-support</span>
+        <span class="ls-tag">rit_evt</span>
+        <span class="ls-desc">PWM/ADC/SPI/timer drivers for EVT's hardware-agnostic firmware API.</span>
+        <span class="ls-link"><a href="https://github.com/RIT-EVT/EVT-core" target="_blank" rel="noopener">github →</a></span>
+      </div>
+      <div class="ls-row">
+        <span class="ls-name">chip8-handheld</span>
+        <span class="ls-tag">personal</span>
+        <span class="ls-desc">Raspberry Pi 3 handheld, custom PCB keypad, SSD1309 OLED.</span>
+        <span class="ls-link"><a href="https://github.com/tmb5932/chip8-embedded" target="_blank" rel="noopener">github →</a><a href="chip8-handheld.html">build.log →</a></span>
+      </div>
+      <div class="ls-row">
+        <span class="ls-name">chip8-emulator</span>
+        <span class="ls-tag">personal</span>
+        <span class="ls-desc">SDL2-based Chip8 interpreter written in Rust (my first project in the language).</span>
+        <span class="ls-link"><a href="https://github.com/tmb5932/chip8-emulator" target="_blank" rel="noopener">github →</a></span>
+      </div>
+      <div class="ls-row">
+        <span class="ls-name">octo-menu-rom</span>
+        <span class="ls-tag">personal</span>
+        <span class="ls-desc">Chip8 menu ROM written in Octo assembly.</span>
+        <span class="ls-link"><a href="https://github.com/tmb5932/octo-menu" target="_blank" rel="noopener">github →</a><a href="octo-menu-viewer.html">demo →</a></span>
+      </div>
+      <div class="ls-row">
+        <span class="ls-name">course-flowchart-maker</span>
+        <span class="ls-tag">personal</span>
+        <span class="ls-desc">Interactive course-planning tool built with Flask, JS, and SQLite.</span>
+        <span class="ls-link"><a href="https://github.com/tmb5932/custom-course-flowchart" target="_blank" rel="noopener">github →</a></span>
+      </div>
+      <div class="ls-row">
+        <span class="ls-name">auto-enroll-rit</span>
+        <span class="ls-tag">personal</span>
+        <span class="ls-desc">Selenium script automating RIT's SIS enrollment during high-demand registration.</span>
+        <span class="ls-link"><a href="https://github.com/tmb5932/auto-enroll-rit" target="_blank" rel="noopener">github →</a></span>
+      </div>
+      <div class="ls-row">
+        <span class="ls-name">studio-tvwt</span>
+        <span class="ls-tag">coursework</span>
+        <span class="ls-desc">CSCI 320 team project: CLI for a PostgreSQL movie-tracking database.</span>
+        <span class="ls-link"><a href="https://github.com/tmb5932/studiotvwt" target="_blank" rel="noopener">github →</a></span>
+      </div>
+      <div class="ls-row">
+        <span class="ls-name">u-fund</span>
+        <span class="ls-tag">coursework</span>
+        <span class="ls-desc">SWEN 261 team project: Angular + Spring donation platform for a homeless shelter.</span>
+        <span class="ls-link">·</span>
+      </div>
+      <div class="ls-row">
+        <span class="ls-name">minecraft-currency-mod</span>
+        <span class="ls-tag">personal</span>
+        <span class="ls-desc">Java mod overhauling Minecraft's trading economy with custom trades, items, and blocks.</span>
+        <span class="ls-link"><a href="https://github.com/tmb5932/currencymod" target="_blank" rel="noopener">github →</a></span>
+      </div>
+      <div class="ls-row">
+        <span class="ls-name">kwzii-casino</span>
+        <span class="ls-tag">personal</span>
+        <span class="ls-desc">JavaFX blackjack, horse betting, and slots (my first project beyond a class assignment).</span>
+        <span class="ls-link"><a href="https://github.com/tmb5932/KwziiCasino" target="_blank" rel="noopener">github →</a></span>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="section-header">
+      <div class="comment">// get in touch</div>
+      <h2>contact.sh</h2>
+    </div>
+    <div class="contact-term">
+      <div class="term-titlebar">
+        <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+        <span class="filename">contact.sh</span>
+      </div>
+      <div class="contact-body">
+        <div class="contact-links">
+          <a href="https://github.com/tmb5932" target="_blank" rel="noopener">github</a>
+          <a href="https://linkedin.com/in/tbrown5932" target="_blank" rel="noopener">linkedin</a>
+          <a href="/assets/TB_Resume.pdf" target="_blank" rel="noopener">resume.pdf</a>
+        </div>
+        <form class="form" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="d7d6fbb5-a696-4b24-8369-8d10061496eb" />
+          <input type="hidden" name="redirect" value="https://www.travismbrown.com/thanks.html" />
+          <div class="form-field">
+            <label for="email">your_email</label>
+            <input type="email" id="email" name="email" placeholder="name@domain.com" required />
+          </div>
+          <div class="form-field">
+            <label for="message">message</label>
+            <textarea id="message" name="message" rows="4" placeholder="Type your message here..." required></textarea>
+          </div>
+          <input type="checkbox" name="botcheck" hidden style="display:none" tabindex="-1" autocomplete="off" />
+          <button class="submit-btn" type="submit">./send</button>
         </form>
       </div>
     </div>
-    <footer class="footer">
-      <p>© 2026 Travis Brown. All rights reserved.</p>
-    </footer>
-  </body>
+  </section>
+
+</main>
+
+<footer>© 2026 Travis Brown · exit 0</footer>
+
+</body>
 </html>

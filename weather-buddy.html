@@ -1,73 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Weather Buddy - Project Photos</title>
-
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="photo-page-style.css" />
-  <link href="https://fonts.googleapis.com/css?family=EB+Garamond" rel="stylesheet" />
-  <link
-    rel="icon"
-    type="image/png"
-    sizes="256x256"
-    href="/assets/favicons/favicon-256.png"
-  />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>weather-buddy / build.log</title>
+<link rel="icon" type="image/png" sizes="256x256" href="/assets/favicons/favicon-256.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-  <!-- Navigation Bar -->
-  <nav class="navbar">
-    <button id="home-nav" onclick="location.href='/'">Home</button>
-    <button id="project-nav" onclick="location.href='/#current-projects'">Projects</button>
-    <button id="contact-nav" onclick="location.href='/#contact'">Contact</button>
-  </nav>
 
-  <!-- Page Header -->
-  <div class="intro-container" style="padding-top: 100px; text-align: center;">
-    <div class="intro">
-      <h1 class="name" style="line-height: 1;">Weather Buddy Gallery</h1>
-      <p class="intro-para" style="padding-top: 25px">
-        Weather Buddy is a small desktop display that makes checking the weather as easy as glancing
-        across the room. It connects to WiFi and pulls current outdoor conditions from a weather API,
-        while an onboard sensor measures the indoor temperature.
-        <br /><br />
-        An ESP32 brings everything together and displays both readings on a small TFT screen. The
-        software is written in ESP-IDF, with the electronics built on a custom PCB and held in a custom 3D-printed case.
-        <br /><br />
-        The photos below document the build from the first breadboard test to the finished device sitting on my desk.
-      </p>
-    </div>
+<header class="topbar">
+  <div class="topbar-inner">
+    <span class="prompt-id"><span class="amber">tbrown@portfolio</span>:~/projects/primary/weather-buddy$</span>
+    <a class="back-link" href="index.html">← ./back</a>
   </div>
+</header>
 
-  <!-- Image Gallery -->
-  <div class="gallery-container">
-    <img src="assets/weather-buddy/breadboard.jpeg" alt="Weather Buddy breadboard test" class="gallery-image" style="color:burlywood; text-align: center;" />
-    <p class="image-caption">
-      The first breadboard test, with every component connected and working together. This setup let me
-      test the display, indoor temperature sensor, WiFi connection, and weather API before moving the
-      project onto a permanent PCB.
-    </p>
-
-    <img src="assets/weather-buddy/pcb.jpeg" alt="Weather Buddy's PCB" class="gallery-image" style="color:burlywood; text-align: center;" />
-    <p class="image-caption">
-      Weather Buddy designed and printed PCB, forgot to take a photo of the assembled board before putting it in the case, so here is the unpopulated board. On the left is a 9-pin header for the TFT display, 
-      and on the right is the surface-mount spots for the indoor temperature sensor and its associated resistors and capacitor. The USB-C power input is in the top-left corner, and the ESP32-S3 dev-kit is in the 
-      center of the board. You may notice there is no place for the button on the back of the case, that is because I forgot to add it to the PCB design until after I got them printed, so I had to solder it directly to the ESP32 dev-kit...
-    </p>
-
-    <img src="assets/weather-buddy/final_front.jpeg" alt="Front of finished Weather Buddy working on a desk" class="gallery-image" style="color:burlywood; text-align: center;" />
-    <img src="assets/weather-buddy/final_side.jpeg" alt="Side of finished Weather Buddy working on a desk" class="gallery-image" style="color:burlywood; text-align: center;" />
-    <p class="image-caption">
-      The finished Weather Buddy working on my desk in its custom 3D-printed case, showing the current
-      outdoor weather and temperature, the temperature inside the room, and the time. It has a USB-C power input and a small button on the back to enter setup mode and also toggle the display.
+<main class="wrap">
+  <div class="gallery-intro">
+    <span class="badge done">complete</span>
+    <span class="meta">personal project · jun 2026 – aug 2026</span>
+    <h1>weather-buddy / build.log</h1>
+    <p>
+      Not every project needs to be some awesome learning experience or super cool;
+      sometimes it should just be useful. Checking the weather usually means finding my phone and
+      opening an app, so I built a little desk buddy instead.
     </p>
   </div>
 
-  <!-- Custom Back Button -->
-  <div style="text-align: center; margin-bottom: 5rem;">
-    <button class="back-home-button" onclick="location.href='/'">← Back to Home</button>
+  <div class="report-specs">
+    <div><span class="amber">hardware:</span> ESP32-S3, custom PCB, TMP102 indoor temp sensor, 3.5in ST7796 SPI TFT (480×320), 3D-printed case</div>
+    <div><span class="amber">software:</span> ESP-IDF v5.4, OpenWeather API client, SNTP time sync</div>
   </div>
+
+  <ul class="report-highlights">
+    <li>Four-section dashboard (indoor temp, outdoor temp, weather icon/condition, date/time) updated region-by-region instead of full-screen redraws.</li>
+    <li>Self-contained WiFi and location setup: hold the button at boot to open a captive portal, enter WiFi credentials and coordinates from a phone, saved to NVS for future boots.</li>
+    <li>After setup, that same button toggles the display on/off; powered over USB-C.</li>
+  </ul>
+
+  <div class="gallery-grid">
+    <figure class="gallery-item">
+      <img src="/assets/weather-buddy/breadboard.jpeg" width="600" height="450" alt="Weather Buddy breadboard prototype" />
+      <figcaption class="cap">early breadboard prototype, validating sensor + display wiring before the PCB</figcaption>
+    </figure>
+    <figure class="gallery-item">
+      <img src="/assets/weather-buddy/pcb.jpeg" width="600" height="450" alt="Weather Buddy's unpopulated custom PCB" />
+      <figcaption class="cap">the custom PCB, unpopulated: forgot to photograph it assembled before it went in the case. 9-pin header for the TFT on the left, temp sensor footprint on the right, USB-C in the top-left corner, ESP32-S3 dev kit in the center</figcaption>
+    </figure>
+    <figure class="gallery-item">
+      <img src="/assets/weather-buddy/final_front.jpeg" width="600" height="450" alt="Finished Weather Buddy, front view" />
+      <figcaption class="cap">finished device, front view: outside + inside conditions on the TFT</figcaption>
+    </figure>
+    <figure class="gallery-item">
+      <img src="/assets/weather-buddy/final_side.jpeg" width="600" height="450" alt="Finished Weather Buddy, side view" />
+      <figcaption class="cap">side profile of the finished enclosure</figcaption>
+    </figure>
+  </div>
+
+  <div class="feed-links" style="margin-bottom: 4rem;">
+    <a href="https://github.com/tmb5932/weather-buddy" target="_blank" rel="noopener">github</a>
+  </div>
+</main>
+
+<footer>© 2026 Travis Brown · exit 0</footer>
+
 </body>
 </html>

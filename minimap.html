@@ -1,61 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Pocket Minimap - Project Photos</title>
-
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="photo-page-style.css" />
-  <link href="https://fonts.googleapis.com/css?family=EB+Garamond" rel="stylesheet" />
-  <link
-    rel="icon"
-    type="image/png"
-    sizes="256x256"
-    href="/assets/favicons/favicon-256.png"
-  />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>car-minimap / build.log</title>
+<link rel="icon" type="image/png" sizes="256x256" href="/assets/favicons/favicon-256.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-  <!-- Navigation Bar -->
-  <nav class="navbar">
-    <button id="home-nav" onclick="location.href='/'">Home</button>
-    <button id="project-nav" onclick="location.href='/#current-projects'">Projects</button>
-    <button id="contact-nav" onclick="location.href='/#contact'">Contact</button>
-  </nav>
 
-  <!-- Page Header -->
-  <div class="intro-container" style="padding-top: 100px; text-align: center;">
-    <div class="intro">
-      <h1 class="name" style="line-height: 1;">Pocket Minimap Gallery</h1>
-      <p class="intro-para" style="padding-top: 25px">
-        A real-time GPS minimap display built on an ESP32-P4 running ESP-IDF. Map tiles are stored as .bin 
-        files on a microSD card and rendered live using LVGL onto a 3.4in display from WaveShare.
-        <br /><br />
-        Originally inspired by <a class="internal-link" target="_blank" href="https://www.youtube.com/@GarageTinkering">GarageTinkering's</a> video and project, 
-        I optimized the graphics pipeline for a larger display and added a potentiometer for hardware brightness control, 
-        plus a persistent odometer that survives power cycles by writing to the SD card.
-        <br /><br />
-        The photos below document my final design and assembled project (because I forgot to take photos of the build process).
-      </p>
-    </div>
+<header class="topbar">
+  <div class="topbar-inner">
+    <span class="prompt-id"><span class="amber">tbrown@portfolio</span>:~/projects/primary/car-minimap$</span>
+    <a class="back-link" href="index.html">← ./back</a>
   </div>
+</header>
 
-  <!-- Image Gallery -->
-  <div class="gallery-container">
-    <img src="assets/minimap/case.jpeg" alt="Finished project" class="gallery-image" style="color:burlywood; text-align: center;"/>
-    <p class="image-caption">
-      Here is a side view of my final design. As you can see, I 3D-printed a custom case for it, although it went through a couple (8) revisions before I was happy with it.
-      You can also see the potentiometer on the side to control screen brightness, and a small cutout on top for the GPS antenna to sit in, for better signal.
+<main class="wrap">
+  <div class="gallery-intro">
+    <span class="badge done">complete</span>
+    <span class="meta">personal project · dec 2025 – jun 2026</span>
+    <h1>car-minimap / build.log</h1>
+    <p>
+      Inspired by GarageTinkering's original concept, I built a real-time map display, running
+      completely offline. Starting from GarageTinkerer's foundation, I optimized the image rendering to
+      run smoother at a larger display resolution and added a few features of my own.
     </p>
-
-    <img src="assets/minimap/final.jpeg" alt="Finished device" class="gallery-image" style="color:burlywood; text-align: center;"/>
-    <p class="image-caption">The finished device! A working real-time GPS minimap you can take anywhere.</p>
   </div>
 
-  <!-- Custom Back Button -->
-  <div style="text-align: center; margin-bottom: 5rem;">
-    <button class="back-home-button" onclick="location.href='/'">← Back to Home</button>
+  <div class="report-specs">
+    <div><span class="amber">hardware:</span> ESP32-P4 (Waveshare 3.4in), microSD storage for offline map tiles, brightness potentiometer</div>
+    <div><span class="amber">software:</span> ESP-IDF + LVGL, own QGIS-based tile-generation pipeline, persistent odometer</div>
   </div>
+
+  <ul class="report-highlights">
+    <li>Renders live surroundings fully offline using LVGL and pre-rendered map tiles (zoom level 16) pulled from a microSD card, generated with my own QGIS + custom PNG-to-BIN conversion pipeline.</li>
+    <li>Added a hardware brightness potentiometer and a persistent odometer that survives power cycles by writing to the SD card.</li>
+    <li>Designed and 3D-printed the enclosure in OnShape, since I didn't have GarageTinkerer's custom dashboard to mount it in.</li>
+  </ul>
+
+  <div class="gallery-grid">
+    <figure class="gallery-item">
+      <img src="/assets/minimap/case.jpeg" width="600" height="450" alt="Side view of the 3D-printed case for the Car Minimap" />
+      <figcaption class="cap">side view of the final design: 3D-printed case (8 revisions to get here), brightness potentiometer on the side, and a cutout on top for the GPS antenna</figcaption>
+    </figure>
+    <figure class="gallery-item">
+      <img src="/assets/minimap/final.jpeg" width="600" height="450" alt="Finished Car Minimap device" />
+      <figcaption class="cap">the finished device: a working real-time GPS minimap you can take anywhere</figcaption>
+    </figure>
+  </div>
+
+  <div class="feed-links" style="margin-bottom: 4rem;">
+    <a href="https://github.com/tmb5932/car-mini-map" target="_blank" rel="noopener">github</a>
+  </div>
+</main>
+
+<footer>© 2026 Travis Brown · exit 0</footer>
+
 </body>
 </html>

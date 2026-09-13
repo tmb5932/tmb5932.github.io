@@ -1,73 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Autonomous Fixed Wing Drone - Project Photos</title>
-
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="photo-page-style.css" />
-  <link href="https://fonts.googleapis.com/css?family=EB+Garamond" rel="stylesheet" />
-  <link
-    rel="icon"
-    type="image/png"
-    sizes="256x256"
-    href="/assets/favicons/favicon-256.png"
-  />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>fixed-wing-drone / build.log</title>
+<link rel="icon" type="image/png" sizes="256x256" href="/assets/favicons/favicon-256.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-  <!-- Navigation Bar -->
-  <nav class="navbar">
-    <button id="home-nav" onclick="location.href='/'">Home</button>
-    <button id="project-nav" onclick="location.href='/#current-projects'">Projects</button>
-    <button id="contact-nav" onclick="location.href='/#contact'">Contact</button>
-  </nav>
 
-  <!-- Page Header -->
-  <div class="intro-container" style="padding-top: 100px; text-align: center;">
-    <div class="intro">
-      <h1 class="name" style="line-height: 1;">Fixed Wing Gallery</h1>
-      <p class="intro-para" style="padding-top: 25px">
-        My friend and I are building a fully autonomous fixed-wing drone from scratch, both the aircraft
-        itself and all of the software that will eventually let it fly on its own. The plane runs an
-        ESP32-S3 alongside the standard RC receiver, giving it an onboard brain capable of taking over
-        from the pilot and executing autonomous flight.
-        <br /><br />
-        Everything is written in ESP-IDF, hand-writing device drivers and flight control logic instead of
-        relying on plug-and-play libraries, building the system around PID loops for roll, pitch, and
-        GPS-guided heading with waypoint following, tuned and validated so far in a custom
-        software-in-the-loop (SITL) simulator.
-        <br /><br />
-        The photos below will document the build as the aircraft and flight controller come together.
-      </p>
-    </div>
+<header class="topbar">
+  <div class="topbar-inner">
+    <span class="prompt-id"><span class="amber">tbrown@portfolio</span>:~/projects/primary/fixed-wing-drone$</span>
+    <a class="back-link" href="index.html">← ./back</a>
   </div>
+</header>
 
-  <!-- Image Gallery -->
-  <div class="gallery-container">
-    <img src="assets/fixed-wing-drone/breadboard.jpeg" alt="Fixed wing flight controller breadboard test" class="gallery-image" style="color:burlywood; text-align: center;" />
-    <p class="image-caption">
-      The first breadboard test of the flight controller, with the ESP32-S3 and supporting sensors wired
-      up to confirm everything works before moving to a permanent board.
+<main class="wrap">
+  <div class="gallery-intro">
+    <span class="badge progress">in_progress</span>
+    <span class="meta">personal project · jun 2026 – present</span>
+    <h1>fixed-wing-drone / build.log</h1>
+    <p>
+      My friend and I are building a fully autonomous fixed-wing drone from scratch: both the aircraft
+      itself and all the software that will eventually let it fly on its own. The plane runs an ESP32-S3
+      alongside the standard RC receiver, giving it an onboard brain capable of taking over from the pilot
+      and executing autonomous flight. Right now it's bench and ground-tested only: RC pass-through, the
+      IMU/GPS drivers, and the PID control loops all work against live sensor data, but the aircraft itself
+      is still being built, so it hasn't flown yet.
     </p>
-
-    <img src="assets/fixed-wing-drone/pcb.jpeg" alt="Fixed wing flight controller PCB" class="gallery-image" style="color:burlywood; text-align: center;" />
-    <p class="image-caption">
-      The assembled flight controller PCB, with the ESP32-S3 and supporting components soldered in place.
-    </p>
-
-    <section class="in-progress" style="max-width: 500px; text-align: center; padding: 2rem; border: 2px dashed rgb(59, 173, 255); border-radius: 12px;">
-      <h2 style="color: rgb(59, 173, 255); margin-top: 0;">In Progress</h2>
-      <p class="image-caption" style="max-width: 100%; margin: 0; padding: 0;">
-        HITL testing, final installation, and flight test photos are coming as the project progresses.
-      </p>
-    </section>
   </div>
 
-  <!-- Custom Back Button -->
-  <div style="text-align: center; margin-bottom: 5rem;">
-    <button class="back-home-button" onclick="location.href='/'">← Back to Home</button>
+  <div class="report-specs">
+    <div><span class="amber">hardware:</span> ESP32-S3, custom carrier PCB in KiCad: connectors for IMU, GPS, 6 servo outputs, primary/secondary ESC, RC input, and UBEC power inputs with reverse-polarity protection</div>
+    <div><span class="amber">software:</span> C/C++, ESP-IDF v5.5, hand-written RC capture/output via MCPWM, ICM-20948 IMU driver + Madgwick AHRS fusion, hand-written NMEA GPS parser</div>
   </div>
+
+  <ul class="report-highlights">
+    <li>PID attitude control (roll/pitch) plus a cascaded heading/waypoint-following loop, both validated against the exact same PID and GPS-math source the firmware runs, through a pair of host-side SITL simulators before ever touching the plane.</li>
+    <li>An 80-scenario regression suite (clean step responses, noise-robustness sweeps, and waypoint-mission edge cases) runs against the current firmware gains to catch regressions.</li>
+    <li>If the RC link goes stale for 200ms, control fails over to the autonomous loop instead of holding the last stick input: treating a lost link as more dangerous than handing off to the flight controller.</li>
+    <li>Next milestones: stable autonomous level flight, altitude hold, and autonomous takeoff/landing, with coordinated formation flight alongside a second drone as a longer-term goal.</li>
+  </ul>
+
+  <div class="gallery-grid">
+    <figure class="gallery-item">
+      <img src="/assets/fixed-wing-drone/breadboard.jpeg" width="600" height="450" alt="First breadboard test of the flight controller" />
+      <figcaption class="cap">first breadboard test: ESP32-S3 and supporting sensors wired up to confirm everything works before moving to a permanent board</figcaption>
+    </figure>
+    <figure class="gallery-item">
+      <img src="/assets/fixed-wing-drone/pcb.jpeg" width="600" height="450" alt="Assembled flight controller PCB" />
+      <figcaption class="cap">assembled flight controller PCB: ESP32-S3 and supporting components soldered in place</figcaption>
+    </figure>
+  </div>
+
+  <div class="feed-links" style="margin-bottom: 4rem;">
+    <a href="https://github.com/tmb5932/fixed-wing-drone" target="_blank" rel="noopener">github</a>
+  </div>
+</main>
+
+<footer>© 2026 Travis Brown · exit 0</footer>
+
 </body>
 </html>

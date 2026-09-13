@@ -1,46 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8" />
-  	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	<title>Octo Menu ROM</title>
-	<link
-	rel="icon"
-	type="image/png"
-	sizes="256x256"
-	href="/assets/favicons/favicon-256.png"
-	/>
-  	<link rel="stylesheet" href="style.css" />
-  	<link rel="stylesheet" href="octo-style.css" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>octo-menu-rom / demo</title>
+<link rel="icon" type="image/png" sizes="256x256" href="/assets/favicons/favicon-256.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
 </head>
 <body>
-	<!--Navigation Bar-->
-	<nav class="navbar">
-		<button id="home-nav" onclick="location.href='/'">Home</button>
-		<button id="project-nav" onclick="location.href='/#current-projects'">Projects</button>
-		<button id="contact-nav" onclick="location.href='/#contact'">Contact</button>
-	</nav>
 
-	<div class="container">
-		<h1>Test out my Chip8 Menu ROM!</h1>
-	  	<p>This emulator allows you to test my Menu ROM I created in Octo Assembly.<br>Use W to move up in the list, S to move down, and D to select the current item!</p>
-  
-	  	<div class="emulator-wrapper">
-			<iframe id="game-frame" src="octo-menu-example.html" width="100%" height="400px"></iframe>
-	  	</div>
-		<button class="btn-reload" onclick="reloadIframe()">Restart Emulator</button>
-		<br><p>This ROM was important to my handheld Chip8 emulator, as it meant that you wouldn't need to reprogram the device every single time you wanted to swap games!</p>
-	</div>
-	<script>
-		window.addEventListener('load', function () {
-			const iframe = document.getElementById('game-frame');
-			iframe.focus();
-		});
+<header class="topbar">
+  <div class="topbar-inner">
+    <span class="prompt-id"><span class="amber">tbrown@portfolio</span>:~/projects/history/octo-menu-rom$</span>
+    <a class="back-link" href="index.html">← ./back</a>
+  </div>
+</header>
 
-		function reloadIframe() {
-			const iframe = document.getElementById('game-frame');
-			iframe.src = iframe.src;
-			iframe.focus();
-		}
-	</script>
+<main class="wrap">
+  <div class="gallery-intro">
+    <span class="meta">personal project</span>
+    <h1>octo-menu-rom / demo</h1>
+    <p>
+      A live emulator running the Chip8 menu ROM I wrote in Octo assembly. Use W to move up, S to move
+      down, and D to select the current item.
+    </p>
+  </div>
+
+  <div class="term-window" style="max-width: 560px; margin: 0 auto 1.5rem;">
+    <div class="term-titlebar">
+      <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+      <span class="filename">octo-menu.ch8 · running</span>
+    </div>
+    <div style="padding: 1rem;">
+      <iframe id="game-frame" src="octo-menu-example.html" width="100%" height="400" style="border: none; display: block;"></iframe>
+    </div>
+  </div>
+
+  <div class="feed-links" style="justify-content: center; margin-bottom: 2rem;">
+    <a href="#" id="restart-btn">restart emulator</a>
+  </div>
+
+  <p style="max-width: 60ch; margin: 0 auto 4rem; color: var(--muted); text-align: center; font-size: 0.9rem;">
+    This ROM was important to my handheld Chip8 emulator: it meant I wouldn't need to reprogram the
+    device every time I wanted to swap games.
+  </p>
+</main>
+
+<footer>© 2026 Travis Brown · exit 0</footer>
+
+<script>
+  function reloadIframe() {
+    const iframe = document.getElementById('game-frame');
+    iframe.src = iframe.src;
+    iframe.focus();
+  }
+  document.getElementById('restart-btn').addEventListener('click', function (e) {
+    e.preventDefault();
+    reloadIframe();
+  });
+  window.addEventListener('load', function () {
+    document.getElementById('game-frame').focus();
+  });
+</script>
+
 </body>
+</html>
