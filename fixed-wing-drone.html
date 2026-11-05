@@ -103,7 +103,10 @@
             <span class="badge retired">retired</span>
           </div>
           <div class="feed-body">
-            <p class="feed-desc">First carrier board for the devkit, moving the wiring off the breadboard and onto proper connectors.</p>
+            <div>
+              <p class="feed-desc">My first PCB: a carrier board for the ESP32-S3 devkit with nearly the same layout v2 ended up with, moving the breadboard wiring onto real connectors for the servos, ESCs, receiver, and sensors.</p>
+              <p class="feed-desc">Bringing it up turned up a few mistakes. Some connectors had TX and RX swapped, so I bridged them with jumper wires. The airspeed sensor had the wrong connector and only got 3.3V instead of the 5V it needs. Some RC inputs landed on pins that aren't usable on my devkit, and a few silkscreen labels were misprinted. v2 fixed all of it.</p>
+            </div>
             <div class="feed-photo-term">
               <div class="term-titlebar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
               <img src="/assets/fixed-wing-drone/pcb.jpeg" width="600" height="450" alt="v1 carrier PCB on the bench" />
