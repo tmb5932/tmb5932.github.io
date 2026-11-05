@@ -26,39 +26,58 @@
     <h1>car-minimap / build.log</h1>
     <p>
       Inspired by GarageTinkering's original concept, I built a real-time map display, running
-      completely offline. Starting from GarageTinkerer's foundation, I optimized the image rendering to
+      completely offline. Starting from GarageTinkering's foundation, I optimized the image rendering to
       run smoother at a larger display resolution and added a few features of my own.
     </p>
+    <div class="feed-links intro-links">
+      <a href="https://github.com/tmb5932/car-mini-map" target="_blank" rel="noopener">github</a>
+    </div>
   </div>
 
   <div class="report-specs">
-    <div><span class="amber">hardware:</span> ESP32-P4 (Waveshare 3.4in), microSD storage for offline map tiles, brightness potentiometer</div>
+    <div><span class="amber">hardware:</span> ESP32-P4 (Waveshare 3.4in), microSD storage for offline map tiles, brightness potentiometer, GPS module</div>
     <div><span class="amber">software:</span> ESP-IDF + LVGL, own QGIS-based tile-generation pipeline, persistent odometer</div>
   </div>
 
+  <section>
+    <div class="section-header">
+      <span class="comment">// what went into it</span>
+      <h2>build/</h2>
+    </div>
   <ul class="report-highlights">
-    <li>Renders live surroundings fully offline using LVGL and pre-rendered map tiles (zoom level 16) pulled from a microSD card, generated with my own QGIS + custom PNG-to-BIN conversion pipeline.</li>
-    <li>Added a hardware brightness potentiometer and a persistent odometer that survives power cycles by writing to the SD card.</li>
-    <li>Designed and 3D-printed the enclosure in OnShape, since I didn't have GarageTinkerer's custom dashboard to mount it in.</li>
-  </ul>
+      <li>Renders live surroundings fully offline using LVGL and pre-rendered map tiles (zoom level 16) pulled from a microSD card, generated with my own QGIS + custom PNG-to-BIN conversion pipeline.</li>
+      <li>Added a hardware brightness potentiometer and a persistent odometer that survives power cycles by writing to the SD card.</li>
+      <li>Designed and 3D-printed the enclosure in OnShape, since I didn't have GarageTinkering's custom dashboard to mount it in.</li>
+    </ul>
+  </section>
 
-  <div class="gallery-grid">
-    <figure class="gallery-item">
-      <img src="/assets/minimap/case.jpeg" width="600" height="450" alt="Side view of the 3D-printed case for the Car Minimap" />
-      <figcaption class="cap">side view of the final design: 3D-printed case (8 revisions to get here), brightness potentiometer on the side, and a cutout on top for the GPS antenna</figcaption>
-    </figure>
-    <figure class="gallery-item">
-      <img src="/assets/minimap/final.jpeg" width="600" height="450" alt="Finished Car Minimap device" />
-      <figcaption class="cap">the finished device: a working real-time GPS minimap you can take anywhere</figcaption>
-    </figure>
-  </div>
+  <section>
+    <div class="section-header">
+      <span class="comment">// pictures</span>
+      <h2>photos/</h2>
+    </div>
+    <div class="photo-grid">
+      <figure class="photo-card">
+        <div class="feed-photo-term">
+          <div class="term-titlebar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="filename">case.jpg</span></div>
+          <img src="/assets/minimap/case.jpeg" width="600" height="450" alt="Side view of the 3D-printed case for the Car Minimap" />
+        </div>
+        <figcaption class="photo-cap">side view of the final design: 3D-printed case (8 revisions to get here), brightness potentiometer on the side, and a cutout on top for the GPS antenna</figcaption>
+      </figure>
+      <figure class="photo-card">
+        <div class="feed-photo-term">
+          <div class="term-titlebar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="filename">final.jpg</span></div>
+          <img src="/assets/minimap/final.jpeg" width="600" height="450" alt="Finished Car Minimap device" />
+        </div>
+        <figcaption class="photo-cap">the finished device: a working real-time GPS minimap you can take anywhere</figcaption>
+      </figure>
+    </div>
+  </section>
 
-  <div class="feed-links" style="margin-bottom: 4rem;">
-    <a href="https://github.com/tmb5932/car-mini-map" target="_blank" rel="noopener">github</a>
-  </div>
 </main>
 
 <footer>© 2026 Travis Brown · exit 0</footer>
 
+<script src="/window-controls.js" defer></script>
 </body>
 </html>

@@ -248,3 +248,64 @@ footer { text-align: center; font-size: 0.75rem; color: var(--muted); padding: 1
 .gallery-item img { width: 100%; height: auto; aspect-ratio: 4/3; object-fit: cover; }
 .gallery-item .cap { font-size: 0.82rem; color: var(--muted); padding: 0.9rem 1.1rem; border-top: 1px solid var(--line); }
 .gallery-item .cap::before { content: "// "; }
+
+/* fixed-wing-drone build log */
+.fw-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 0.5rem 0 0.5rem; }
+@media (max-width: 640px) { .fw-hero { grid-template-columns: 1fr; } }
+.badge.retired { color: var(--muted); border: 1px solid var(--line); background: transparent; }
+.feed-entry.retired::before { border-color: var(--muted); }
+.feed-body .feed-desc:last-child { margin-bottom: 0; }
+.fw-log-row { display: grid; grid-template-columns: 105px 150px 1fr; gap: 1rem; padding: 0.75rem 1.1rem; border-bottom: 1px solid var(--line); font-size: 0.85rem; align-items: start; }
+.fw-log-row:last-child { border-bottom: none; }
+.fw-date { color: var(--amber); white-space: nowrap; }
+.fw-mode { color: var(--muted); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.03em; white-space: nowrap; padding-top: 0.1rem; }
+.fw-note { color: var(--text); }
+.fw-log-head { padding-block: 0.45rem; font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; }
+@media (max-width: 640px) { .fw-log-row { grid-template-columns: auto 1fr; } .fw-note { grid-column: 1 / -1; } .fw-log-head { display: none; } }
+.fw-split { display: grid; grid-template-columns: 1.3fr 1fr; gap: 1.5rem; align-items: start; }
+.fw-split .report-highlights { margin-bottom: 0; }
+.fw-split .feed-photo-term img { width: 100%; height: auto; aspect-ratio: 4/3; object-fit: cover; }
+@media (max-width: 700px) { .fw-split { grid-template-columns: 1fr; } }
+
+/* Clickable window dots (window-controls.js) */
+button.dot { border: 0; padding: 0; cursor: pointer; flex: none; transition: filter 0.15s, transform 0.15s; }
+button.dot:hover { filter: brightness(1.3); transform: scale(1.15); }
+button.dot:focus-visible { outline: 2px solid var(--amber); outline-offset: 2px; }
+.term-titlebar { position: relative; }
+.tw-toast { position: absolute; right: 0.8rem; top: 50%; transform: translateY(-50%); line-height: 1; font-size: 0.7rem; color: #e05a4e; white-space: nowrap; pointer-events: none; background: #1a1d1a; padding-left: 0.4rem; animation: tw-toast 1.8s ease forwards; }
+.tw-toast.amber { color: var(--amber); }
+@keyframes tw-toast { 0% { opacity: 0; } 10% { opacity: 1; } 75% { opacity: 1; } 100% { opacity: 0; } }
+.tw-shake { animation: tw-shake 0.4s ease; }
+@keyframes tw-shake { 0%, 100% { transform: translateX(0); } 20% { transform: translateX(-6px); } 40% { transform: translateX(6px); } 60% { transform: translateX(-4px); } 80% { transform: translateX(4px); } }
+/* dark backing so a spinning photo reveals a screen, not the page's dot grid */
+.feed-photo-term, .photo-term { background: #050605; }
+.tw-clip { overflow: hidden; background: #050605; }
+/* yellow: the photo spins inside its window; transforms don't affect layout, so the window keeps its size */
+.tw-spin { animation: tw-spin 0.9s cubic-bezier(0.65, 0, 0.35, 1); }
+@keyframes tw-spin {
+  0%   { transform: scale(1) rotate(0deg); }
+  50%  { transform: scale(0.03) rotate(180deg); }
+  100% { transform: scale(1) rotate(360deg); }
+}
+.tw-noscroll { overflow: hidden; }
+.tw-lightbox { position: fixed; inset: 0; z-index: 100; background: rgba(5,7,5,0.92); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.8rem; padding: 1.5rem; cursor: zoom-out; }
+.tw-lightbox figure { display: flex; flex-direction: column; align-items: center; gap: 0.6rem; max-width: 100%; }
+.tw-lightbox img { max-width: min(92vw, 1400px); max-height: 82vh; width: auto; height: auto; border: 1px solid var(--line); border-radius: 6px; }
+.tw-lightbox figcaption { color: var(--muted); font-size: 0.8rem; text-align: center; max-width: 70ch; }
+.tw-lightbox figcaption::before { content: "// "; }
+.tw-lightbox-close { font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: var(--text); background: rgba(255,176,0,0.08); border: 1px solid rgba(255,176,0,0.35); border-radius: 4px; padding: 0.35rem 0.7rem; cursor: pointer; }
+.tw-lightbox-close:hover, .tw-lightbox-close:focus-visible { color: var(--amber); border-color: var(--amber); outline: none; }
+@media (prefers-reduced-motion: reduce) { .tw-shake, .tw-spin { animation: none; } button.dot { transition: none; } button.dot:hover { transform: none; } }
+
+/* Build-log photo windows (chip8, weather-buddy, minimap) */
+.photo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem 1rem; margin-bottom: 4rem; }
+@media (max-width: 640px) { .photo-grid { grid-template-columns: 1fr; } }
+.photo-card { margin: 0; display: flex; flex-direction: column; gap: 0.6rem; min-width: 0; }
+.photo-cap { font-size: 0.82rem; color: var(--muted); }
+.photo-cap::before { content: "// "; }
+
+/* second listing under experience/ (clubs and teams) */
+.exp-group { margin-top: 1rem; }
+
+/* build-log links just under the intro */
+.intro-links { margin-top: 1rem; }

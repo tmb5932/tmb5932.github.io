@@ -61,18 +61,18 @@
         <div class="term-titlebar">
           <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
         </div>
-        <img src="/assets/travis.jpg" width="600" height="800" alt="Portrait of Travis Brown" />
+        <img src="/assets/travis.jpg" width="600" height="800" alt="Portrait of me" />
       </div>
     </div>
   </section>
 
   <section id="experience">
     <div class="section-header">
-      <div class="comment">// where i've worked</div>
+      <div class="comment">// where i've worked, and what i'm part of</div>
       <h2>experience/</h2>
     </div>
     <div class="ls-listing">
-      <div class="ls-header">$ cat experience.log</div>
+      <div class="ls-header">$ cat work.log</div>
       <div class="exp-row">
         <div>
           <div class="exp-title">Embedded Software Intern</div>
@@ -87,12 +87,22 @@
         </div>
         <div class="exp-dates">May 2025 – Aug 2025</div>
       </div>
+    </div>
+    <div class="ls-listing exp-group">
+      <div class="ls-header">$ cat clubs-and-teams.log</div>
+      <div class="exp-row">
+        <div>
+          <div class="exp-title">VCU Software Lead</div>
+          <div class="exp-company">RIT Electric Vehicle Team</div>
+        </div>
+        <div class="exp-dates">Aug 2026 – Present</div>
+      </div>
       <div class="exp-row">
         <div>
           <div class="exp-title">Embedded Software Engineer</div>
           <div class="exp-company">RIT Electric Vehicle Team</div>
         </div>
-        <div class="exp-dates">Aug 2023 – Present</div>
+        <div class="exp-dates">Aug 2023 – Aug 2026</div>
       </div>
     </div>
   </section>
@@ -117,14 +127,13 @@
           <div class="feed-body">
             <div>
               <div class="feed-specs">
-                <div><span class="amber">hardware:</span> ESP32-S3, custom carrier PCB (KiCad)</div>
-                <div><span class="amber">software:</span> C/C++, ESP-IDF v5.5, PID + Madgwick AHRS, SITL-validated nav</div>
+                <div><span class="amber">hardware:</span> ESP32-S3, custom carrier PCB (flown) + custom v3 PCB (KiCad)</div>
+                <div><span class="amber">software:</span> C on FreeRTOS, PID + Madgwick AHRS, SITL-tuned gains</div>
               </div>
               <p class="feed-desc">
-                Building a fully autonomous fixed-wing drone from scratch with a friend: the aircraft and
-                the software. Bench/ground-tested so far: RC pass-through, IMU/GPS drivers, and PID attitude
-                control all run against live sensor data, with heading/waypoint control validated in a
-                custom SITL simulator ahead of first flight.
+                Building an autonomous fixed-wing RC plane with my roommate. He built the airframe, and I
+                designed the flight controller's electronics and software. It has flown twice, including its
+                first autonomous tests, on control gains tuned entirely in a custom SITL simulator.
               </p>
               <div class="feed-links">
                 <a href="https://github.com/tmb5932/fixed-wing-drone" target="_blank" rel="noopener">github</a>
@@ -133,20 +142,20 @@
             </div>
             <div class="feed-photo-term">
               <div class="term-titlebar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
-              <img src="/assets/fixed-wing-drone/pcb.jpeg" width="600" height="450" alt="Assembled flight controller PCB for the autonomous fixed-wing drone" />
+              <img src="/assets/fixed-wing-drone/plane_outside.jpeg" width="1400" height="1050" alt="The autonomous fixed-wing plane sitting outdoors" />
             </div>
           </div>
         </div>
       </article>
 
-      <article class="feed-entry done">
+      <article class="feed-entry">
         <div class="feed-card">
           <div class="feed-head">
             <div>
               <h3>vehicle-control-unit</h3>
-              <span class="feed-affil">rit electric vehicle team · aug 2023 – present</span>
+              <span class="feed-affil">rit electric vehicle team · oct 2025 – present</span>
             </div>
-            <span class="badge done">complete</span>
+            <span class="badge progress">in_progress</span>
           </div>
           <div class="feed-body">
             <div>
@@ -355,5 +364,6 @@
 
 <footer>© 2026 Travis Brown · exit 0</footer>
 
+<script src="/window-controls.js" defer></script>
 </body>
 </html>

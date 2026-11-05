@@ -25,44 +25,203 @@
     <span class="meta">personal project · jun 2026 – present</span>
     <h1>fixed-wing-drone / build.log</h1>
     <p>
-      My friend and I are building a fully autonomous fixed-wing drone from scratch: both the aircraft
-      itself and all the software that will eventually let it fly on its own. The plane runs an ESP32-S3
-      alongside the standard RC receiver, giving it an onboard brain capable of taking over from the pilot
-      and executing autonomous flight. Right now it's bench and ground-tested only: RC pass-through, the
-      IMU/GPS drivers, and the PID control loops all work against live sensor data, but the aircraft itself
-      is still being built, so it hasn't flown yet.
+      My roommate and I are building an autonomous fixed-wing RC plane from scratch. He's a mechanical
+      engineer who designed and built the airframe and control surfaces, picked the motors and servos, and
+      mounted everything in the plane. I designed the flight controller, which is all of the electronics and
+      all of the software. It sits between a standard RC receiver and the plane's servos and ESCs. In manual
+      mode it passes the pilot's commands straight through, and when the pilot flips a switch it takes over,
+      holding attitude with PID loops and steering toward GPS waypoints.
     </p>
+    <div class="feed-links intro-links">
+      <a href="https://github.com/tmb5932/fixed-wing-drone" target="_blank" rel="noopener">github</a>
+    </div>
+  </div>
+
+  <div class="fw-hero">
+    <div class="feed-photo-term">
+      <div class="term-titlebar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="filename">airframe.jpg</span></div>
+      <img src="/assets/fixed-wing-drone/plane_outside.jpeg" width="1400" height="1050" alt="The fixed-wing plane sitting on pavement outdoors" />
+    </div>
+    <div class="feed-photo-term">
+      <div class="term-titlebar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="filename">flight_test.jpg</span></div>
+      <img src="/assets/fixed-wing-drone/flight_overhead.jpeg" width="1400" height="1050" alt="The plane flying overhead against a blue sky" />
+    </div>
   </div>
 
   <div class="report-specs">
-    <div><span class="amber">hardware:</span> ESP32-S3, custom carrier PCB in KiCad: connectors for IMU, GPS, 6 servo outputs, primary/secondary ESC, RC input, and UBEC power inputs with reverse-polarity protection</div>
-    <div><span class="amber">software:</span> C/C++, ESP-IDF v5.5, hand-written RC capture/output via MCPWM, ICM-20948 IMU driver + Madgwick AHRS fusion, hand-written NMEA GPS parser</div>
+    <div><span class="amber">hardware:</span> ESP32-S3, custom carrier PCB (flown) and custom v3 PCB (ordered), ICM-20948 IMU, GPS, MS4525DO pitot airspeed sensor</div>
+    <div><span class="amber">software:</span> C on FreeRTOS (ESP-IDF v5.5), MCPWM RC capture/output, Madgwick AHRS library, hand-written NMEA GPS parser, cascaded PID control, host-side SITL simulators</div>
   </div>
 
-  <ul class="report-highlights">
-    <li>PID attitude control (roll/pitch) plus a cascaded heading/waypoint-following loop, both validated against the exact same PID and GPS-math source the firmware runs, through a pair of host-side SITL simulators before ever touching the plane.</li>
-    <li>An 80-scenario regression suite (clean step responses, noise-robustness sweeps, and waypoint-mission edge cases) runs against the current firmware gains to catch regressions.</li>
-    <li>If the RC link goes stale for 200ms, control fails over to the autonomous loop instead of holding the last stick input: treating a lost link as more dangerous than handing off to the flight controller.</li>
-    <li>Next milestones: stable autonomous level flight, altitude hold, and autonomous takeoff/landing, with coordinated formation flight alongside a second drone as a longer-term goal.</li>
-  </ul>
+  <section>
+    <div class="section-header">
+      <span class="comment">// what the flight controller does</span>
+      <h2>firmware/</h2>
+    </div>
+    <ul class="report-highlights">
+      <li>Cascaded control. A 10 Hz heading loop turns the next GPS waypoint into a bank angle, and 100 Hz roll and pitch loops hold it. An airspeed PID sets throttle, and the speed target rises in turns to keep the same margin above stall.</li>
+      <li>The control loop gets one ESP32-S3 core to itself on a fixed 100 Hz schedule, while the sensor and navigation tasks share the other, so a slow sensor read can't delay a control cycle.</li>
+      <li>The pilot is always in charge. Flipping to manual always takes back control. RC gaps under 1 s hold the last command, and longer ones send the plane home and then into a spiral descent with the motor off.</li>
+      <li>Autonomous mode can't engage until the switch has been seen in manual since boot, stays off without a GPS fix, and hands control back after five missed attitude reads.</li>
+      <li>Two host-side SITL simulators compile the exact same PID and GPS-math source the firmware runs, and 80 regression tests gate every gain change.</li>
+      <li>A setup mode (hold BOOT at power-on) starts a WiFi captive portal for calibrating servos and ESCs, tuning PID gains, and planning GPS missions.</li>
+    </ul>
+  </section>
 
-  <div class="gallery-grid">
-    <figure class="gallery-item">
-      <img src="/assets/fixed-wing-drone/breadboard.jpeg" width="600" height="450" alt="First breadboard test of the flight controller" />
-      <figcaption class="cap">first breadboard test: ESP32-S3 and supporting sensors wired up to confirm everything works before moving to a permanent board</figcaption>
-    </figure>
-    <figure class="gallery-item">
-      <img src="/assets/fixed-wing-drone/pcb.jpeg" width="600" height="450" alt="Assembled flight controller PCB" />
-      <figcaption class="cap">assembled flight controller PCB: ESP32-S3 and supporting components soldered in place</figcaption>
-    </figure>
-  </div>
+  <section>
+    <div class="section-header">
+      <span class="comment">// how the hardware got here</span>
+      <h2>hardware/revisions/</h2>
+    </div>
+    <div class="session-feed">
+      <article class="feed-entry retired">
+        <div class="feed-card">
+          <div class="feed-head">
+            <div>
+              <h3>breadboard</h3>
+              <span class="feed-affil">bench prototype</span>
+            </div>
+            <span class="badge retired">retired</span>
+          </div>
+          <div class="feed-body">
+            <p class="feed-desc">ESP32-S3 devkit and standalone sensor modules on a breadboard. Proved out the sensor drivers, RC pulse capture, PWM outputs, and the first control loop before moving to a real board.</p>
+            <div class="feed-photo-term">
+              <div class="term-titlebar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
+              <img src="/assets/fixed-wing-drone/breadboard.jpeg" width="600" height="450" alt="First breadboard test of the flight controller" />
+            </div>
+          </div>
+        </div>
+      </article>
 
-  <div class="feed-links" style="margin-bottom: 4rem;">
+      <article class="feed-entry retired">
+        <div class="feed-card">
+          <div class="feed-head">
+            <div>
+              <h3>v1 carrier board</h3>
+              <span class="feed-affil">first PCB</span>
+            </div>
+            <span class="badge retired">retired</span>
+          </div>
+          <div class="feed-body">
+            <p class="feed-desc">First carrier board for the devkit, moving the wiring off the breadboard and onto proper connectors.</p>
+            <div class="feed-photo-term">
+              <div class="term-titlebar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
+              <img src="/assets/fixed-wing-drone/pcb.jpeg" width="600" height="450" alt="v1 carrier PCB on the bench" />
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="feed-entry done">
+        <div class="feed-card">
+          <div class="feed-head">
+            <div>
+              <h3>v2 carrier board</h3>
+              <span class="feed-affil">the board that has flown</span>
+            </div>
+            <span class="badge done">flown</span>
+          </div>
+          <div class="feed-body">
+            <div>
+              <p class="feed-desc">Carrier board for the ESP32-S3 devkit. Routes the receiver, 6 servo and 2 ESC outputs, and the off-board IMU, GPS, and pitot airspeed sensor to proper connectors.</p>
+              <p class="feed-desc">Splits power into isolated servo and logic rails, so a stalling servo can't brown out the flight controller.</p>
+            </div>
+            <div class="feed-photo-term">
+              <div class="term-titlebar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
+              <img src="/assets/fixed-wing-drone/v2_board.jpeg" width="1400" height="1050" alt="v2 carrier board on the bench with receiver, servos, GPS, and pitot tube" />
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="feed-entry">
+        <div class="feed-card">
+          <div class="feed-head">
+            <div>
+              <h3>v3 custom board</h3>
+              <span class="feed-affil">ordered, not yet flown</span>
+            </div>
+            <span class="badge progress">ordered</span>
+          </div>
+          <div class="feed-body">
+            <div>
+              <p class="feed-desc">Fully custom board. Primary and backup IMUs onboard over SPI from different manufacturers (ICM-42688-P and BMI088), a DPS368 barometer for altitude, and microSD logging.</p>
+              <p class="feed-desc">Heading moves to an external compass mounted away from the motor and power wiring, and the RC input becomes a serial line for a digital receiver.</p>
+            </div>
+            <div class="feed-photo-term">
+              <div class="term-titlebar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
+              <img src="/assets/fixed-wing-drone/v3_board.jpeg" width="1400" height="1050" alt="3D render of the v3 flight controller PCB in KiCad" />
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-header">
+      <span class="comment">// what happened in the air</span>
+      <h2>flight.log</h2>
+    </div>
+    <div class="ls-listing">
+      <div class="ls-header">$ cat flight.log</div>
+      <div class="fw-log-row fw-log-head" aria-hidden="true">
+        <span>date</span>
+        <span>mode</span>
+        <span>result</span>
+      </div>
+      <div class="fw-log-row">
+        <span class="fw-date">2026-10-10</span>
+        <span class="fw-mode">manual</span>
+        <span class="fw-note">Flew, but with frequent control dropouts. Our receiver drops out briefly at range, and the 200 ms link-loss threshold was treating those gaps as a lost link. Raised it to 1 s.</span>
+      </div>
+      <div class="fw-log-row">
+        <span class="fw-date">2026-10-24</span>
+        <span class="fw-mode">manual</span>
+        <span class="fw-note">Clean flight with no false failsafes. The 1 s threshold fixed the dropouts.</span>
+      </div>
+      <div class="fw-log-row">
+        <span class="fw-date">2026-10-24</span>
+        <span class="fw-mode">auto: level hold</span>
+        <span class="fw-note">Held level flight for a few hundred feet on its own, using the roll and pitch gains SITL found, with no retuning.</span>
+      </div>
+      <div class="fw-log-row">
+        <span class="fw-date">2026-10-24</span>
+        <span class="fw-mode">auto: heading hold</span>
+        <span class="fw-note">Couldn't hold a heading. The magnetometer built into the v2 IMU isn't reliable enough, so heading hold is off until v3's external compass is in.</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-header">
+      <span class="comment">// what's next</span>
+      <h2>todo.md</h2>
+    </div>
+    <div class="fw-split">
+      <ul class="report-highlights">
+        <li>Extend SITL to the full firmware, with sensor models, mode logic, failsafes, and sensor-fault cases.</li>
+        <li>Bring up and bench test the v3 board.</li>
+        <li>Switch to a digital receiver on v3's serial RC input.</li>
+        <li>Sensor health checks that keep a mode from engaging on bad data.</li>
+        <li>Heading hold and waypoint missions in the air with v3's external compass.</li>
+        <li>Altitude hold with the barometer, then autonomous takeoff and landing.</li>
+        <li>Longer term, coordinated formation flight with a second plane.</li>
+      </ul>
+      <div class="feed-photo-term">
+        <div class="term-titlebar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="filename">electronics_bay.jpg</span></div>
+        <img src="/assets/fixed-wing-drone/plane_electronics.jpeg" width="1400" height="1050" alt="The plane with its nose removed, showing the v2 flight controller in the electronics bay" />
+      </div>
+    </div>
+  </section>
+
+  <div class="feed-links" style="margin: 2.5rem 0 4rem;">
     <a href="https://github.com/tmb5932/fixed-wing-drone" target="_blank" rel="noopener">github</a>
   </div>
 </main>
 
 <footer>© 2026 Travis Brown · exit 0</footer>
 
+<script src="/window-controls.js" defer></script>
 </body>
 </html>

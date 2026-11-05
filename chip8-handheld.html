@@ -30,6 +30,9 @@
       I developed and tested it on a Raspberry Pi 5, then moved the final build over to a Raspberry Pi 3,
       hand-soldering a custom keypad PCB and an OLED display into a case I designed and 3D-printed myself.
     </p>
+    <div class="feed-links intro-links">
+      <a href="https://github.com/tmb5932/chip8-embedded" target="_blank" rel="noopener">github</a>
+    </div>
   </div>
 
   <div class="report-specs">
@@ -37,38 +40,60 @@
     <div><span class="amber">software:</span> Rust, hand-written SPI display driver, full Chip8 interpreter with quirks support</div>
   </div>
 
+  <section>
+    <div class="section-header">
+      <span class="comment">// what went into it</span>
+      <h2>build/</h2>
+    </div>
   <ul class="report-highlights">
-    <li>Planned to use an SSD1306 over I2C, but I2C was too slow for fast-updating game screens: switched to an SSD1309 over SPI, then had to write my own display driver from scratch since the crate I was using only supported I2C.</li>
-    <li>The Raspberry Pi 5 I developed on has a newer RP1 I/O controller that broke most standard GPIO libraries; ended up on rppal, one of the few that worked with it.</li>
-    <li>Learned to solder for this project: from the custom 4×4 keypad PCB to the rest of the wiring.</li>
-    <li>Runs my own game-selection ROM (written in Octo assembly) to switch between games without swapping files.</li>
-  </ul>
+      <li>Planned to use an SSD1306 over I2C, but I2C was too slow for fast-updating game screens: switched to an SSD1309 over SPI, then had to write my own display driver from scratch since the crate I was using only supported I2C.</li>
+      <li>The Raspberry Pi 5 I developed on has a newer RP1 I/O controller that broke most standard GPIO libraries; ended up on rppal, one of the few that worked with it.</li>
+      <li>Learned to solder for this project: from the custom 4×4 keypad PCB to the rest of the wiring.</li>
+      <li>Runs my own game-selection ROM (written in Octo assembly) to switch between games without swapping files.</li>
+    </ul>
+  </section>
 
-  <div class="gallery-grid">
-    <figure class="gallery-item">
-      <img src="/assets/chip8/prototype.jpeg" width="600" height="450" alt="First working Chip8 handheld prototype" />
-      <figcaption class="cap">my first successful prototype</figcaption>
-    </figure>
-    <figure class="gallery-item">
-      <img src="/assets/chip8/wiring.jpeg" width="600" height="450" alt="Internal wiring of the Chip8 handheld" />
-      <figcaption class="cap">the custom 4×4 keypad PCB and internal wiring, plus an ATXRaspi, PowerBoost 1000C, and a lithium-ion battery to turn the Pi on/off with a button press</figcaption>
-    </figure>
-    <figure class="gallery-item">
-      <img src="/assets/chip8/final1.jpeg" width="600" height="450" alt="Finished Chip8 handheld in its 3D-printed case" />
-      <figcaption class="cap">the finished device in its 3D-printed case: designed and printed for the first time ever</figcaption>
-    </figure>
-    <figure class="gallery-item">
-      <img src="/assets/chip8/final2.jpeg" width="600" height="450" alt="Another angle of the finished Chip8 handheld" />
-      <figcaption class="cap">another angle, showing the power button, game-switch button, status LED, and charging port</figcaption>
-    </figure>
-  </div>
+  <section>
+    <div class="section-header">
+      <span class="comment">// pictures</span>
+      <h2>photos/</h2>
+    </div>
+    <div class="photo-grid">
+      <figure class="photo-card">
+        <div class="feed-photo-term">
+          <div class="term-titlebar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="filename">prototype.jpg</span></div>
+          <img src="/assets/chip8/prototype.jpeg" width="600" height="450" alt="First working Chip8 handheld prototype" />
+        </div>
+        <figcaption class="photo-cap">my first successful prototype</figcaption>
+      </figure>
+      <figure class="photo-card">
+        <div class="feed-photo-term">
+          <div class="term-titlebar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="filename">wiring.jpg</span></div>
+          <img src="/assets/chip8/wiring.jpeg" width="600" height="450" alt="Internal wiring of the Chip8 handheld" />
+        </div>
+        <figcaption class="photo-cap">the custom 4×4 keypad PCB and internal wiring, plus an ATXRaspi, PowerBoost 1000C, and a lithium-ion battery to turn the Pi on/off with a button press</figcaption>
+      </figure>
+      <figure class="photo-card">
+        <div class="feed-photo-term">
+          <div class="term-titlebar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="filename">final1.jpg</span></div>
+          <img src="/assets/chip8/final1.jpeg" width="600" height="450" alt="Finished Chip8 handheld in its 3D-printed case" />
+        </div>
+        <figcaption class="photo-cap">the finished device in its 3D-printed case: designed and printed for the first time ever</figcaption>
+      </figure>
+      <figure class="photo-card">
+        <div class="feed-photo-term">
+          <div class="term-titlebar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="filename">final2.jpg</span></div>
+          <img src="/assets/chip8/final2.jpeg" width="600" height="450" alt="Another angle of the finished Chip8 handheld" />
+        </div>
+        <figcaption class="photo-cap">another angle, showing the power button, game-switch button, status LED, and charging port</figcaption>
+      </figure>
+    </div>
+  </section>
 
-  <div class="feed-links" style="margin-bottom: 4rem;">
-    <a href="https://github.com/tmb5932/chip8-embedded" target="_blank" rel="noopener">github</a>
-  </div>
 </main>
 
 <footer>© 2026 Travis Brown · exit 0</footer>
 
+<script src="/window-controls.js" defer></script>
 </body>
 </html>

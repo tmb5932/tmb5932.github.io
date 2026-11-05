@@ -29,6 +29,9 @@
       sometimes it should just be useful. Checking the weather usually means finding my phone and
       opening an app, so I built a little desk buddy instead.
     </p>
+    <div class="feed-links intro-links">
+      <a href="https://github.com/tmb5932/weather-buddy" target="_blank" rel="noopener">github</a>
+    </div>
   </div>
 
   <div class="report-specs">
@@ -36,37 +39,59 @@
     <div><span class="amber">software:</span> ESP-IDF v5.4, OpenWeather API client, SNTP time sync</div>
   </div>
 
+  <section>
+    <div class="section-header">
+      <span class="comment">// how it works</span>
+      <h2>build/</h2>
+    </div>
   <ul class="report-highlights">
-    <li>Four-section dashboard (indoor temp, outdoor temp, weather icon/condition, date/time) updated region-by-region instead of full-screen redraws.</li>
-    <li>Self-contained WiFi and location setup: hold the button at boot to open a captive portal, enter WiFi credentials and coordinates from a phone, saved to NVS for future boots.</li>
-    <li>After setup, that same button toggles the display on/off; powered over USB-C.</li>
-  </ul>
+      <li>Four-section dashboard (indoor temp, outdoor temp, weather icon/condition, date/time) updated region-by-region instead of full-screen redraws.</li>
+      <li>Self-contained WiFi and location setup: hold the button at boot to open a captive portal, enter WiFi credentials and coordinates from a phone, saved to NVS for future boots.</li>
+      <li>After setup, that same button toggles the display on/off; powered over USB-C.</li>
+    </ul>
+  </section>
 
-  <div class="gallery-grid">
-    <figure class="gallery-item">
-      <img src="/assets/weather-buddy/breadboard.jpeg" width="600" height="450" alt="Weather Buddy breadboard prototype" />
-      <figcaption class="cap">early breadboard prototype, validating sensor + display wiring before the PCB</figcaption>
-    </figure>
-    <figure class="gallery-item">
-      <img src="/assets/weather-buddy/pcb.jpeg" width="600" height="450" alt="Weather Buddy's unpopulated custom PCB" />
-      <figcaption class="cap">the custom PCB, unpopulated: forgot to photograph it assembled before it went in the case. 9-pin header for the TFT on the left, temp sensor footprint on the right, USB-C in the top-left corner, ESP32-S3 dev kit in the center</figcaption>
-    </figure>
-    <figure class="gallery-item">
-      <img src="/assets/weather-buddy/final_front.jpeg" width="600" height="450" alt="Finished Weather Buddy, front view" />
-      <figcaption class="cap">finished device, front view: outside + inside conditions on the TFT</figcaption>
-    </figure>
-    <figure class="gallery-item">
-      <img src="/assets/weather-buddy/final_side.jpeg" width="600" height="450" alt="Finished Weather Buddy, side view" />
-      <figcaption class="cap">side profile of the finished enclosure</figcaption>
-    </figure>
-  </div>
+  <section>
+    <div class="section-header">
+      <span class="comment">// pictures</span>
+      <h2>photos/</h2>
+    </div>
+    <div class="photo-grid">
+      <figure class="photo-card">
+        <div class="feed-photo-term">
+          <div class="term-titlebar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="filename">breadboard.jpg</span></div>
+          <img src="/assets/weather-buddy/breadboard.jpeg" width="600" height="450" alt="Weather Buddy breadboard prototype" />
+        </div>
+        <figcaption class="photo-cap">early breadboard prototype, validating sensor + display wiring before the PCB</figcaption>
+      </figure>
+      <figure class="photo-card">
+        <div class="feed-photo-term">
+          <div class="term-titlebar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="filename">pcb.jpg</span></div>
+          <img src="/assets/weather-buddy/pcb.jpeg" width="600" height="450" alt="Weather Buddy's unpopulated custom PCB" />
+        </div>
+        <figcaption class="photo-cap">the custom PCB, unpopulated: forgot to photograph it assembled before it went in the case. 9-pin header for the TFT on the left, temp sensor footprint on the right, USB-C in the top-left corner, ESP32-S3 dev kit in the center</figcaption>
+      </figure>
+      <figure class="photo-card">
+        <div class="feed-photo-term">
+          <div class="term-titlebar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="filename">final_front.jpg</span></div>
+          <img src="/assets/weather-buddy/final_front.jpeg" width="600" height="450" alt="Finished Weather Buddy, front view" />
+        </div>
+        <figcaption class="photo-cap">finished device, front view: outside + inside conditions on the TFT</figcaption>
+      </figure>
+      <figure class="photo-card">
+        <div class="feed-photo-term">
+          <div class="term-titlebar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="filename">final_side.jpg</span></div>
+          <img src="/assets/weather-buddy/final_side.jpeg" width="600" height="450" alt="Finished Weather Buddy, side view" />
+        </div>
+        <figcaption class="photo-cap">side profile of the finished enclosure</figcaption>
+      </figure>
+    </div>
+  </section>
 
-  <div class="feed-links" style="margin-bottom: 4rem;">
-    <a href="https://github.com/tmb5932/weather-buddy" target="_blank" rel="noopener">github</a>
-  </div>
 </main>
 
 <footer>© 2026 Travis Brown · exit 0</footer>
 
+<script src="/window-controls.js" defer></script>
 </body>
 </html>
